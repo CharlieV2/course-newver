@@ -240,7 +240,7 @@ namespace course
             this.MinimumSize = new System.Drawing.Size(710, 465);
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "V 1.0.1";
+            this.Text = "Program name";
             this.StartPanel.ResumeLayout(false);
             this.StartPanel.PerformLayout();
             this.ResumeLayout(false);

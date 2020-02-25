@@ -329,43 +329,36 @@ namespace course
             return MainPanel;
 
         }
-        public Chart CreateElements_4_4()
+        public Chart CreateElements_4_4(List<string> age, List<int> awards)
         {
 
-            Chart chart1 = new Chart();
+            Chart newChart = new Chart();
+            
+            newChart.Size = new Size(265, 300);
 
 
-            chart1.Name = "chart1";
-            chart1.Text = "chart1";
-            chart1.Size = new Size(230, 300);
+            //--- chart area
+            newChart.ChartAreas.Add(new ChartArea());
 
-            chart1.ChartAreas.Add(new ChartArea());
-            chart1.ChartAreas[0].AxisX.LabelStyle.Angle = -45;
-            chart1.ChartAreas[0].AxisX.MajorGrid.LineColor = Color.FromArgb(240, 240, 240);
-            chart1.ChartAreas[0].AxisY.MajorGrid.LineColor = Color.FromArgb(240, 240, 240);
-            //chart1.ChartAreas[0].AxisX.MajorGrid.LineWidth = 0;
-            //chart1.ChartAreas[0].AxisY.MajorGrid.LineWidth = 0;
+            //newChart.ChartAreas[0].AxisX.LabelStyle.Angle = -45;
+            newChart.ChartAreas[0].AxisX.MajorGrid.LineColor = Color.FromArgb(240, 240, 240);
+            newChart.ChartAreas[0].AxisY.MajorGrid.LineColor = Color.FromArgb(240, 240, 240);
 
 
-            chart1.Series.Add("Pets");
+            //--- series
+            newChart.Series.Add(new Series());
 
-            chart1.Series["Pets"].ChartType = SeriesChartType.Line;
-            chart1.Series["Pets"].MarkerStyle = MarkerStyle.Circle;
-            chart1.Series["Pets"].MarkerSize = 7;
-
-            chart1.Series["Pets"].LabelAngle = 45;
-
-
-            chart1.Palette = ChartColorPalette.Excel;
+            newChart.Series[0].ChartType = SeriesChartType.Line;
+            newChart.Series[0].MarkerStyle = MarkerStyle.Circle;
+            newChart.Series[0].MarkerSize = 7;
 
 
-            string[] seriesArray = { "Cats", "Dogs", "Birds", "Nords" };
-            double[] pointsArray = { 1.57, 2, 0.45, 1.3 };
+            newChart.Palette = ChartColorPalette.Excel;
 
 
-            chart1.Series["Pets"].Points.DataBindXY(seriesArray, pointsArray);
+            newChart.Series[0].Points.DataBindXY(age, awards);
 
-            return chart1;
+            return newChart;
         }
     }
 }

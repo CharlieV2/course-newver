@@ -18,8 +18,6 @@ namespace course
         //--------//
         FileWorker fileWorker = new FileWorker();
         UIcreator ui = new UIcreator();
-
-        PictureBox loading = new PictureBox();
         //--------//
 
         public BDhandler()
@@ -31,14 +29,6 @@ namespace course
 
             ElementsPanel.Location = new Point(6, 67);
             BackBut.BackColor = Color.FromArgb(0, 0, 0, 0);
-
-            // add loading form
-            loading.Image = Properties.Resources.pass_Loading_1;
-            loading.Size = new Size(694, 426);
-            loading.Location = new Point(0, 0);
-            this.Controls.Add(loading);
-            loading.BringToFront();
-            loading.Visible = false;
         }
 
 
@@ -164,10 +154,6 @@ namespace course
         // create panels
         private void CreatePanels_General()
         {
-            loading.BringToFront();
-            loading.Visible = true;
-            Application.DoEvents();
-
             Panel element = new Panel();
 
             foreach (Sportsmen item in Variables.sportsmens)
@@ -177,15 +163,9 @@ namespace course
 
                 ElementsPanel.Controls.Add(element);
             }
-
-            loading.Visible = false;
         }
         private void CreatePanels_4_1()
         {
-            loading.BringToFront();
-            loading.Visible = true;
-            Application.DoEvents();
-
             string country = tab2.Country.Text;
 
             foreach (Sportsmen item in Variables.sportsmens)
@@ -201,58 +181,45 @@ namespace course
             BackBut.Enabled = true;
 
             ElementsPanel.Width = ElementsPanel.Controls.Count > 7 ? 306 : 286;
-
-            loading.Visible = false;
         }
         private void CreatePanels_4_2(List<Sportsmen> sportsmens)
         {
-            loading.BringToFront();
-            loading.Visible = true;
-            Application.DoEvents();
-
             ElementsPanel.Width = sportsmens.Count > 5 ? 306 : 286;
 
             foreach (Sportsmen item in sportsmens)
             {
                 ElementsPanel.Controls.Add(ui.CreateElements_4_2(item.Country, item.Name + " " + item.Surname));
             }
-
-            loading.Visible = false;
         }
         private void CreatePanels_4_3(IOrderedEnumerable<KeyValuePair<string, Dictionary<string, int>>> countries)
         {
-            loading.BringToFront();
-            loading.Visible = true;
-            Application.DoEvents();
-
-
             foreach (var item in countries)
             {
                 ElementsPanel.Controls.Add(ui.CreateElements_4_3(item.Key, item.Value["Gold"], item.Value["Silver"], item.Value["Bronze"]));
             }
 
             ElementsPanel.Width = ElementsPanel.Controls.Count > 5 ? 306 : 286;
-
-            loading.Visible = false;
         }
-        public void CreatePanels_4_4()
+        public void CreatePanels_4_4(List<string> age, List<int> awards)
         {
-            loading.BringToFront();
-            loading.Visible = true;
-            Application.DoEvents();
+            // add save chart button
+            Button btnSaveChart = new Button();
+            btnSaveChart.TabStop = false;
+            btnSaveChart.BackColor = tab3.StartBut_4_4.BackColor;
+            btnSaveChart.Font = tab3.StartBut_4_4.Font;
+            btnSaveChart.FlatStyle = tab3.StartBut_4_4.FlatStyle;
+            btnSaveChart.FlatAppearance.BorderSize = 0;
+            btnSaveChart.FlatAppearance.BorderColor = btnSaveChart.BackColor;
+
+            btnSaveChart.Text = "Save chart";
+            btnSaveChart.Size = new Size(280, 30);
+            btnSaveChart.Click += new EventHandler(btnSaveChart_Click);
+            void btnSaveChart_Click(object sender, EventArgs e) => fileWorker.SaveChart((ElementsPanel.Controls[0] as Chart));
 
 
-            // calculate
-
-
-
-
-
-
-
-            ElementsPanel.Controls.Add(ui.CreateElements_4_4());
-
-            loading.Visible = false;
+            // paint 
+            ElementsPanel.Controls.Add(ui.CreateElements_4_4(age, awards));
+            ElementsPanel.Controls.Add(btnSaveChart);
         }
         public void CreatePanels_4_5()
         {
@@ -298,7 +265,7 @@ namespace course
                     // с указанием страны в порядке возрастания результата
                     ElementsPanel_Clear();
 
-                    List<Sportsmen> sportsmens = new List<Sportsmen>(); 
+                    List<Sportsmen> sportsmens = new List<Sportsmen>();
 
                     Sportsmen Insert; // спортсмен, находящийся в процессе поиска места в списке
                     Sportsmen Temp;   // временная переменная для обмена местами в списке 
@@ -364,9 +331,9 @@ namespace course
                         {
                             countries.Add(item.Country, new Dictionary<string, int>());
 
-                            countries[item.Country].Add("Gold", int.Parse(item.Gold)); 
-                            countries[item.Country].Add("Silver", int.Parse(item.Silver)); 
-                            countries[item.Country].Add("Bronze", int.Parse(item.Bronze)); 
+                            countries[item.Country].Add("Gold", int.Parse(item.Gold));
+                            countries[item.Country].Add("Silver", int.Parse(item.Silver));
+                            countries[item.Country].Add("Bronze", int.Parse(item.Bronze));
                         }
 
                     }
@@ -385,8 +352,53 @@ namespace course
                 case "4.4":
                     #region task 4.4
                     ElementsPanel_Clear();
-                    CreatePanels_4_4();
-                  
+
+                    // calculate
+                    var rowChartData = new Dictionary<string, List<int>>();
+
+                    // агрегатор   возраст : количество наград, участников такого возраста
+                    foreach (Sportsmen item in Variables.sportsmens)
+                    {
+                        if (item.Sport.ToLower() == tab3.Sport.Text.ToLower())
+                        {
+                            if (rowChartData.ContainsKey(item.Age))
+                            {
+                                rowChartData[item.Age][0] += int.Parse(item.Gold) + int.Parse(item.Silver) + int.Parse(item.Bronze);
+                                rowChartData[item.Age][1]++;
+                            }
+                            else
+                            {
+                                rowChartData.Add(item.Age, new List<int>());
+
+                                rowChartData[item.Age].Add(int.Parse(item.Gold) + int.Parse(item.Silver) + int.Parse(item.Bronze));
+                                rowChartData[item.Age].Add(1);
+                            }
+                        }
+                    }
+
+
+                    // сортировка по возрасту <
+                    var sortedChartData = from pair in rowChartData
+                                          orderby int.Parse(pair.Key) ascending
+                                          select pair;
+
+                    // получение средних значений
+                    List<string> ageChartData = new List<string>();
+                    List<int> avrgAwardsChartData = new List<int>();
+
+                    int avrgAwards;
+
+                    foreach (var item in sortedChartData)
+                    {
+                        avrgAwards = item.Value[0] / item.Value[1];
+
+                        ageChartData.Add(item.Key);
+                        avrgAwardsChartData.Add(avrgAwards);
+                    }
+
+
+                    CreatePanels_4_4(ageChartData, avrgAwardsChartData);
+
                     #endregion
                     break;
 

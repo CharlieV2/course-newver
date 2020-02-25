@@ -162,5 +162,8 @@
   <ItemGroup>
     <None Include="Resources\pass_Loading_1.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="changelog.txt" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

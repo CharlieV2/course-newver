@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace course
 {
@@ -71,6 +72,18 @@ namespace course
 
                 Variables.sportsmens.Add(sportsmen);
             }
+        }
+
+
+
+        public void SaveChart(Chart chart)
+        {
+            string name = "Chart ";
+            int counter = 1;
+
+            while (File.Exists(Variables.path + name + counter + ".png")) counter++;
+
+            chart.SaveImage(Variables.path + name + counter + ".png", ChartImageFormat.Png);
         }
     }
 }
