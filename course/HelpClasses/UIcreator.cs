@@ -335,12 +335,11 @@ namespace course
             Chart chart1 = new Chart();
 
 
-            chart1.ChartAreas.Add(new ChartArea());
-
             chart1.Name = "chart1";
-            chart1.Size = new Size(230, 300);
             chart1.Text = "chart1";
+            chart1.Size = new Size(230, 300);
 
+            chart1.ChartAreas.Add(new ChartArea());
             chart1.ChartAreas[0].AxisX.LabelStyle.Angle = -45;
             chart1.ChartAreas[0].AxisX.MajorGrid.LineColor = Color.FromArgb(240, 240, 240);
             chart1.ChartAreas[0].AxisY.MajorGrid.LineColor = Color.FromArgb(240, 240, 240);
