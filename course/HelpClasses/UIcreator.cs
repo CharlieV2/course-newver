@@ -24,7 +24,7 @@ namespace course
         Panel CurrentChoose = null;
         //-----//
 
-
+        // actions panel
         public Panel Actions(string action, string BdName)
         {
             // Создание информационной панели о действии
@@ -64,6 +64,7 @@ namespace course
         }
 
 
+        // help funcs
         public Label NewLabel(string Text, Point Location)
         {
             Label lbl = new Label();
@@ -88,9 +89,28 @@ namespace course
 
             return pb;
         }
+        public Button NewButton(Font font, FlatStyle flatstyle, Panel ElementsPanel)
+        {
+            Button btn = new Button();
+            FileWorker fileWorker = new FileWorker();
+
+            btn.TabStop = false;
+            btn.BackColor = Color.FromArgb(123, 165, 240);
+            btn.Font = font;
+            btn.FlatStyle = flatstyle;
+            btn.FlatAppearance.BorderSize = 0;
+            btn.FlatAppearance.BorderColor = Color.FromArgb(123, 165, 240);
+
+            btn.Text = "Save chart";
+            btn.Size = new Size(280, 30);
+            btn.Click += new EventHandler(btnSaveChart_Click);
+            void btnSaveChart_Click(object sender, EventArgs e) => fileWorker.SaveChart((ElementsPanel.Controls[0] as Chart), sender);
+
+            return btn;
+        }
 
 
-
+        // creating elements
         public Panel CreateElements_General(Sportsmen sportsmen, Tab1 tab)
         {
             #region Creating elements
@@ -333,7 +353,6 @@ namespace course
         {
 
             Chart newChart = new Chart();
-            
             newChart.Size = new Size(265, 300);
 
 
@@ -357,6 +376,41 @@ namespace course
 
 
             newChart.Series[0].Points.DataBindXY(age, awards);
+
+            return newChart;
+        }
+        public Chart CreateElements_4_5(Dictionary<string, int> data)
+        {
+            Chart newChart = new Chart();
+            newChart.Size = new Size(275, 300);
+
+            newChart.ChartAreas.Add(new ChartArea());
+            newChart.Series.Add(new Series());
+            newChart.Series[0].ChartType = SeriesChartType.Pie;
+
+            newChart.Palette = ChartColorPalette.Excel;
+
+            newChart.Series[0].Points.DataBindXY(data.Keys, data.Values);
+            
+            return newChart;
+        }
+
+        public Chart CreateElements_4_6(Dictionary<string, int> data)
+        {
+            Chart newChart = new Chart();
+            newChart.Size = new Size(260, 300);
+
+            newChart.ChartAreas.Add(new ChartArea());
+            newChart.ChartAreas[0].AxisX.LabelStyle.Angle = -45;
+            newChart.ChartAreas[0].AxisX.MajorGrid.LineColor = Color.FromArgb(240, 240, 240);
+            newChart.ChartAreas[0].AxisY.MajorGrid.LineColor = Color.FromArgb(240, 240, 240);
+
+            newChart.Series.Add(new Series());
+            newChart.Series[0].ChartType = SeriesChartType.Column;
+
+            newChart.Palette = ChartColorPalette.Excel;
+
+            newChart.Series[0].Points.DataBindXY(data.Keys, data.Values);
 
             return newChart;
         }

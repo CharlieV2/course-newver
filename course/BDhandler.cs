@@ -203,31 +203,29 @@ namespace course
         public void CreatePanels_4_4(List<string> age, List<int> awards)
         {
             // add save chart button
-            Button btnSaveChart = new Button();
-            btnSaveChart.TabStop = false;
-            btnSaveChart.BackColor = tab3.StartBut_4_4.BackColor;
-            btnSaveChart.Font = tab3.StartBut_4_4.Font;
-            btnSaveChart.FlatStyle = tab3.StartBut_4_4.FlatStyle;
-            btnSaveChart.FlatAppearance.BorderSize = 0;
-            btnSaveChart.FlatAppearance.BorderColor = btnSaveChart.BackColor;
-
-            btnSaveChart.Text = "Save chart";
-            btnSaveChart.Size = new Size(280, 30);
-            btnSaveChart.Click += new EventHandler(btnSaveChart_Click);
-            void btnSaveChart_Click(object sender, EventArgs e) => fileWorker.SaveChart((ElementsPanel.Controls[0] as Chart));
-
+            Button btnSaveChart = ui.NewButton(tab3.StartBut_4_4.Font, tab3.StartBut_4_4.FlatStyle, ElementsPanel);
 
             // paint 
             ElementsPanel.Controls.Add(ui.CreateElements_4_4(age, awards));
             ElementsPanel.Controls.Add(btnSaveChart);
         }
-        public void CreatePanels_4_5()
+        public void CreatePanels_4_5(Dictionary<string, int> data)
         {
+            // add save chart button
+            Button btnSaveChart = ui.NewButton(tab3.StartBut_4_4.Font, tab3.StartBut_4_4.FlatStyle, ElementsPanel);
 
+            // paint 
+            ElementsPanel.Controls.Add(ui.CreateElements_4_5(data));
+            ElementsPanel.Controls.Add(btnSaveChart);
         }
-        public void CreatePanels_4_6()
+        public void CreatePanels_4_6(Dictionary<string, int> data)
         {
+            // add save chart button
+            Button btnSaveChart = ui.NewButton(tab3.StartBut_4_4.Font, tab3.StartBut_4_4.FlatStyle, ElementsPanel);
 
+            // paint 
+            ElementsPanel.Controls.Add(ui.CreateElements_4_6(data));
+            ElementsPanel.Controls.Add(btnSaveChart);
         }
 
 
@@ -359,7 +357,7 @@ namespace course
                     // агрегатор   возраст : количество наград, участников такого возраста
                     foreach (Sportsmen item in Variables.sportsmens)
                     {
-                        if (item.Sport.ToLower() == tab3.Sport.Text.ToLower())
+                        if (item.Sport.ToLower() == tab3.Sport44.Text.ToLower())
                         {
                             if (rowChartData.ContainsKey(item.Age))
                             {
@@ -406,7 +404,21 @@ namespace course
                 case "4.5":
                     #region task 4.5
                     ElementsPanel_Clear();
-                    CreatePanels_4_5();
+
+                    var data45 = new Dictionary<string, int>();
+
+                    foreach (Sportsmen item in Variables.sportsmens)
+                    {
+                        if (item.Sport.ToLower() == tab3.Sport45.Text.ToLower())
+                        {
+                            if (data45.ContainsKey(item.Country))
+                                data45[item.Country]++;
+                            else
+                                data45.Add(item.Country, 1);
+                        }
+                    }
+
+                    CreatePanels_4_5(data45);
                     #endregion
                     break;
 
@@ -414,7 +426,18 @@ namespace course
                 case "4.6":
                     #region task 4.6 
                     ElementsPanel_Clear();
-                    CreatePanels_4_6();
+
+                    var data46 = new Dictionary<string, int>();
+
+                    foreach (Sportsmen item in Variables.sportsmens)
+                    {
+                        if (data46.ContainsKey(item.Country))
+                            data46[item.Country]++;
+                        else
+                            data46.Add(item.Country, 1);
+                    }
+
+                    CreatePanels_4_6(data46);
                     #endregion
                     break;
             }

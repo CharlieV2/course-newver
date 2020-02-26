@@ -5,11 +5,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms.DataVisualization.Charting;
+using System.Windows.Forms;
 
 namespace course
 {
     public class FileWorker
     {
+        // bd
         public string CheckBd(string BdName)
         {
             if (File.Exists(Variables.path + BdName + ".txt"))
@@ -75,15 +77,19 @@ namespace course
         }
 
 
-
-        public void SaveChart(Chart chart)
+        // chart
+        public void SaveChart(Chart chart, object sender)
         {
+            (sender as Button).Enabled = false;
+
             string name = "Chart ";
             int counter = 1;
 
             while (File.Exists(Variables.path + name + counter + ".png")) counter++;
 
             chart.SaveImage(Variables.path + name + counter + ".png", ChartImageFormat.Png);
+
+            (sender as Button).Enabled = true;
         }
     }
 }

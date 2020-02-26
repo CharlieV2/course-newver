@@ -43,7 +43,7 @@
             // Country
             // 
             this.Country.Font = new System.Drawing.Font("Segoe UI Light", 11F);
-            this.Country.Location = new System.Drawing.Point(100, 56);
+            this.Country.Location = new System.Drawing.Point(123, 71);
             this.Country.Name = "Country";
             this.Country.Size = new System.Drawing.Size(116, 27);
             this.Country.TabIndex = 35;
@@ -57,7 +57,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Segoe UI Light", 12F);
             this.label2.ForeColor = System.Drawing.Color.GhostWhite;
-            this.label2.Location = new System.Drawing.Point(34, 59);
+            this.label2.Location = new System.Drawing.Point(57, 74);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(60, 21);
             this.label2.TabIndex = 34;
@@ -70,7 +70,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Segoe UI Light", 14F);
             this.label1.ForeColor = System.Drawing.Color.GhostWhite;
-            this.label1.Location = new System.Drawing.Point(17, 22);
+            this.label1.Location = new System.Drawing.Point(32, 34);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(95, 25);
             this.label1.TabIndex = 36;
@@ -85,7 +85,7 @@
             this.StartBut_4_1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.StartBut_4_1.Font = new System.Drawing.Font("Segoe UI Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.StartBut_4_1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.StartBut_4_1.Location = new System.Drawing.Point(232, 56);
+            this.StartBut_4_1.Location = new System.Drawing.Point(245, 71);
             this.StartBut_4_1.Name = "StartBut_4_1";
             this.StartBut_4_1.Size = new System.Drawing.Size(73, 27);
             this.StartBut_4_1.TabIndex = 39;
@@ -102,7 +102,7 @@
             this.StartBut_4_2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.StartBut_4_2.Font = new System.Drawing.Font("Segoe UI Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.StartBut_4_2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.StartBut_4_2.Location = new System.Drawing.Point(232, 162);
+            this.StartBut_4_2.Location = new System.Drawing.Point(245, 168);
             this.StartBut_4_2.Name = "StartBut_4_2";
             this.StartBut_4_2.Size = new System.Drawing.Size(73, 27);
             this.StartBut_4_2.TabIndex = 43;
@@ -117,7 +117,7 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Segoe UI Light", 14F);
             this.label3.ForeColor = System.Drawing.Color.GhostWhite;
-            this.label3.Location = new System.Drawing.Point(17, 126);
+            this.label3.Location = new System.Drawing.Point(32, 131);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(98, 25);
             this.label3.TabIndex = 42;
@@ -127,7 +127,7 @@
             // Sport
             // 
             this.Sport.Font = new System.Drawing.Font("Segoe UI Light", 11F);
-            this.Sport.Location = new System.Drawing.Point(100, 162);
+            this.Sport.Location = new System.Drawing.Point(123, 168);
             this.Sport.Name = "Sport";
             this.Sport.Size = new System.Drawing.Size(116, 27);
             this.Sport.TabIndex = 41;
@@ -141,7 +141,7 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Segoe UI Light", 12F);
             this.label4.ForeColor = System.Drawing.Color.GhostWhite;
-            this.label4.Location = new System.Drawing.Point(34, 165);
+            this.label4.Location = new System.Drawing.Point(57, 171);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(53, 21);
             this.label4.TabIndex = 40;
@@ -156,9 +156,9 @@
             this.StartBut_4_3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.StartBut_4_3.Font = new System.Drawing.Font("Segoe UI Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.StartBut_4_3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.StartBut_4_3.Location = new System.Drawing.Point(73, 270);
+            this.StartBut_4_3.Location = new System.Drawing.Point(61, 273);
             this.StartBut_4_3.Name = "StartBut_4_3";
-            this.StartBut_4_3.Size = new System.Drawing.Size(79, 27);
+            this.StartBut_4_3.Size = new System.Drawing.Size(73, 27);
             this.StartBut_4_3.TabIndex = 47;
             this.StartBut_4_3.TabStop = false;
             this.StartBut_4_3.Text = "Start";
@@ -171,7 +171,7 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Segoe UI Light", 14F);
             this.label5.ForeColor = System.Drawing.Color.GhostWhite;
-            this.label5.Location = new System.Drawing.Point(17, 230);
+            this.label5.Location = new System.Drawing.Point(32, 235);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(98, 25);
             this.label5.TabIndex = 46;
