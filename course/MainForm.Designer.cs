@@ -42,6 +42,7 @@ namespace course
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.StartPanel = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.DirectoryPath = new System.Windows.Forms.TextBox();
@@ -54,13 +55,15 @@ namespace course
             this.label1 = new System.Windows.Forms.Label();
             this.ActionsPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.AnimationTimer = new System.Windows.Forms.Timer(this.components);
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.StartPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // StartPanel
             // 
             this.StartPanel.AllowDrop = true;
-            this.StartPanel.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.StartPanel.BackColor = System.Drawing.Color.White;
             this.StartPanel.Controls.Add(this.label3);
             this.StartPanel.Controls.Add(this.DirectoryPath);
             this.StartPanel.Controls.Add(this.RewriteWarning);
@@ -83,7 +86,7 @@ namespace course
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Segoe UI Light", 10F);
-            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(120)))), ((int)(((byte)(214)))));
             this.label3.Location = new System.Drawing.Point(5, 348);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(211, 19);
@@ -108,7 +111,7 @@ namespace course
             // 
             this.RewriteWarning.AutoSize = true;
             this.RewriteWarning.Font = new System.Drawing.Font("Segoe UI Light", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.RewriteWarning.ForeColor = System.Drawing.Color.White;
+            this.RewriteWarning.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(120)))), ((int)(((byte)(214)))));
             this.RewriteWarning.Location = new System.Drawing.Point(26, 193);
             this.RewriteWarning.Name = "RewriteWarning";
             this.RewriteWarning.Size = new System.Drawing.Size(248, 60);
@@ -117,14 +120,13 @@ namespace course
     "сана!";
             this.RewriteWarning.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.RewriteWarning.Visible = false;
-            this.RewriteWarning.Click += new System.EventHandler(this.RewriteWarning_Click);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Segoe UI Light", 12F);
-            this.label2.ForeColor = System.Drawing.Color.GhostWhite;
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(120)))), ((int)(((byte)(214)))));
             this.label2.Location = new System.Drawing.Point(5, 46);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(138, 21);
@@ -133,8 +135,8 @@ namespace course
             // 
             // NextStepBut
             // 
-            this.NextStepBut.BackColor = System.Drawing.Color.RoyalBlue;
-            this.NextStepBut.FlatAppearance.BorderColor = System.Drawing.Color.RoyalBlue;
+            this.NextStepBut.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(159)))), ((int)(((byte)(225)))));
+            this.NextStepBut.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(159)))), ((int)(((byte)(225)))));
             this.NextStepBut.FlatAppearance.BorderSize = 0;
             this.NextStepBut.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(167)))), ((int)(((byte)(242)))));
             this.NextStepBut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -151,9 +153,9 @@ namespace course
             // 
             // DeleteBDBut
             // 
-            this.DeleteBDBut.BackColor = System.Drawing.Color.RoyalBlue;
+            this.DeleteBDBut.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(159)))), ((int)(((byte)(225)))));
             this.DeleteBDBut.Enabled = false;
-            this.DeleteBDBut.FlatAppearance.BorderColor = System.Drawing.Color.RoyalBlue;
+            this.DeleteBDBut.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(159)))), ((int)(((byte)(225)))));
             this.DeleteBDBut.FlatAppearance.BorderSize = 0;
             this.DeleteBDBut.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(15)))), ((int)(((byte)(29)))));
             this.DeleteBDBut.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(17)))), ((int)(((byte)(35)))));
@@ -171,9 +173,9 @@ namespace course
             // 
             // NewBDBut
             // 
-            this.NewBDBut.BackColor = System.Drawing.Color.RoyalBlue;
+            this.NewBDBut.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(159)))), ((int)(((byte)(225)))));
             this.NewBDBut.Enabled = false;
-            this.NewBDBut.FlatAppearance.BorderColor = System.Drawing.Color.RoyalBlue;
+            this.NewBDBut.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(159)))), ((int)(((byte)(225)))));
             this.NewBDBut.FlatAppearance.BorderSize = 0;
             this.NewBDBut.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(167)))), ((int)(((byte)(242)))));
             this.NewBDBut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -204,7 +206,7 @@ namespace course
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.GhostWhite;
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(56)))), ((int)(((byte)(184)))));
             this.label1.Location = new System.Drawing.Point(4, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(273, 25);
@@ -217,7 +219,6 @@ namespace course
             this.ActionsPanel.Name = "ActionsPanel";
             this.ActionsPanel.Size = new System.Drawing.Size(160, 402);
             this.ActionsPanel.TabIndex = 6;
-            this.ActionsPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.ActionsPanel_Paint);
             // 
             // AnimationTimer
             // 
@@ -225,14 +226,25 @@ namespace course
             this.AnimationTimer.Interval = 25;
             this.AnimationTimer.Tick += new System.EventHandler(this.AnimationTimer_Tick);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(479, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(211, 419);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 7;
+            this.pictureBox1.TabStop = false;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::course.Properties.Resources.d51ea6e460ff3245;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(694, 426);
             this.Controls.Add(this.StartPanel);
             this.Controls.Add(this.ActionsPanel);
+            this.Controls.Add(this.pictureBox1);
             this.DoubleBuffered = true;
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(710, 465);
@@ -243,6 +255,7 @@ namespace course
             this.Text = "Program name";
             this.StartPanel.ResumeLayout(false);
             this.StartPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -261,6 +274,7 @@ namespace course
         private System.Windows.Forms.Label RewriteWarning;
         private System.Windows.Forms.Label label3;
         public System.Windows.Forms.TextBox DirectoryPath;
+        private PictureBox pictureBox1;
     }
 }
 

@@ -48,6 +48,14 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.panel8 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -55,40 +63,43 @@
             // 
             // Bronze
             // 
+            this.Bronze.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Bronze.Font = new System.Drawing.Font("Segoe UI Light", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Bronze.ForeColor = System.Drawing.Color.Black;
-            this.Bronze.Location = new System.Drawing.Point(298, 214);
+            this.Bronze.Location = new System.Drawing.Point(298, 219);
             this.Bronze.Name = "Bronze";
-            this.Bronze.Size = new System.Drawing.Size(25, 27);
+            this.Bronze.Size = new System.Drawing.Size(25, 20);
             this.Bronze.TabIndex = 47;
             this.Bronze.TabStop = false;
             this.Bronze.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // Silver
             // 
+            this.Silver.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Silver.Font = new System.Drawing.Font("Segoe UI Light", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Silver.ForeColor = System.Drawing.Color.Black;
-            this.Silver.Location = new System.Drawing.Point(190, 213);
+            this.Silver.Location = new System.Drawing.Point(190, 218);
             this.Silver.Name = "Silver";
-            this.Silver.Size = new System.Drawing.Size(25, 27);
+            this.Silver.Size = new System.Drawing.Size(25, 20);
             this.Silver.TabIndex = 46;
             this.Silver.TabStop = false;
             this.Silver.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // Gold
             // 
+            this.Gold.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Gold.Font = new System.Drawing.Font("Segoe UI Light", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Gold.ForeColor = System.Drawing.Color.Black;
-            this.Gold.Location = new System.Drawing.Point(82, 213);
+            this.Gold.Location = new System.Drawing.Point(82, 218);
             this.Gold.Name = "Gold";
-            this.Gold.Size = new System.Drawing.Size(25, 27);
+            this.Gold.Size = new System.Drawing.Size(25, 20);
             this.Gold.TabIndex = 45;
             this.Gold.TabStop = false;
             this.Gold.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // RandomBut
             // 
-            this.RandomBut.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(165)))), ((int)(((byte)(240)))));
+            this.RandomBut.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(159)))), ((int)(((byte)(225)))));
             this.RandomBut.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(201)))), ((int)(((byte)(201)))));
             this.RandomBut.FlatAppearance.BorderSize = 0;
             this.RandomBut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -104,7 +115,7 @@
             // 
             // SaveBut
             // 
-            this.SaveBut.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(165)))), ((int)(((byte)(240)))));
+            this.SaveBut.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(159)))), ((int)(((byte)(225)))));
             this.SaveBut.Enabled = false;
             this.SaveBut.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(201)))), ((int)(((byte)(201)))));
             this.SaveBut.FlatAppearance.BorderSize = 0;
@@ -121,7 +132,7 @@
             // 
             // DelBut
             // 
-            this.DelBut.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(165)))), ((int)(((byte)(240)))));
+            this.DelBut.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(159)))), ((int)(((byte)(225)))));
             this.DelBut.Enabled = false;
             this.DelBut.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(201)))), ((int)(((byte)(201)))));
             this.DelBut.FlatAppearance.BorderSize = 0;
@@ -138,7 +149,7 @@
             // 
             // NewBut
             // 
-            this.NewBut.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(165)))), ((int)(((byte)(240)))));
+            this.NewBut.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(159)))), ((int)(((byte)(225)))));
             this.NewBut.Enabled = false;
             this.NewBut.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(201)))), ((int)(((byte)(201)))));
             this.NewBut.FlatAppearance.BorderSize = 0;
@@ -156,48 +167,51 @@
             // 
             // Sport
             // 
+            this.Sport.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Sport.Font = new System.Drawing.Font("Segoe UI Light", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Sport.Location = new System.Drawing.Point(136, 167);
             this.Sport.Name = "Sport";
-            this.Sport.Size = new System.Drawing.Size(212, 27);
+            this.Sport.Size = new System.Drawing.Size(212, 20);
             this.Sport.TabIndex = 37;
             this.Sport.TabStop = false;
-            this.Sport.TextChanged += new System.EventHandler(this.Sport_TextChanged);
             // 
             // Age
             // 
+            this.Age.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Age.Font = new System.Drawing.Font("Segoe UI Light", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Age.Location = new System.Drawing.Point(136, 116);
             this.Age.Name = "Age";
-            this.Age.Size = new System.Drawing.Size(212, 27);
+            this.Age.Size = new System.Drawing.Size(212, 20);
             this.Age.TabIndex = 36;
             this.Age.TabStop = false;
             // 
             // Surname
             // 
+            this.Surname.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Surname.Font = new System.Drawing.Font("Segoe UI Light", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Surname.Location = new System.Drawing.Point(136, 80);
             this.Surname.Name = "Surname";
-            this.Surname.Size = new System.Drawing.Size(212, 27);
+            this.Surname.Size = new System.Drawing.Size(212, 20);
             this.Surname.TabIndex = 35;
             this.Surname.TabStop = false;
-            this.Surname.TextChanged += new System.EventHandler(this.Surname_TextChanged);
             // 
             // NameT
             // 
+            this.NameT.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.NameT.Font = new System.Drawing.Font("Segoe UI Light", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.NameT.Location = new System.Drawing.Point(136, 44);
             this.NameT.Name = "NameT";
-            this.NameT.Size = new System.Drawing.Size(212, 27);
+            this.NameT.Size = new System.Drawing.Size(212, 20);
             this.NameT.TabIndex = 34;
             this.NameT.TabStop = false;
             // 
             // Country
             // 
+            this.Country.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Country.Font = new System.Drawing.Font("Segoe UI Light", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Country.Location = new System.Drawing.Point(136, 8);
             this.Country.Name = "Country";
-            this.Country.Size = new System.Drawing.Size(212, 27);
+            this.Country.Size = new System.Drawing.Size(212, 20);
             this.Country.TabIndex = 33;
             this.Country.TabStop = false;
             // 
@@ -206,7 +220,7 @@
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Segoe UI Light", 12F);
-            this.label5.ForeColor = System.Drawing.Color.GhostWhite;
+            this.label5.ForeColor = System.Drawing.Color.Gray;
             this.label5.Location = new System.Drawing.Point(19, 169);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(88, 21);
@@ -218,7 +232,7 @@
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Segoe UI Light", 12F);
-            this.label4.ForeColor = System.Drawing.Color.GhostWhite;
+            this.label4.ForeColor = System.Drawing.Color.Gray;
             this.label4.Location = new System.Drawing.Point(19, 118);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(65, 21);
@@ -230,7 +244,7 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Segoe UI Light", 12F);
-            this.label3.ForeColor = System.Drawing.Color.GhostWhite;
+            this.label3.ForeColor = System.Drawing.Color.Gray;
             this.label3.Location = new System.Drawing.Point(19, 46);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(39, 21);
@@ -242,7 +256,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Segoe UI Light", 12F);
-            this.label1.ForeColor = System.Drawing.Color.GhostWhite;
+            this.label1.ForeColor = System.Drawing.Color.Gray;
             this.label1.Location = new System.Drawing.Point(19, 82);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(73, 21);
@@ -254,7 +268,7 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Segoe UI Light", 12F);
-            this.label2.ForeColor = System.Drawing.Color.GhostWhite;
+            this.label2.ForeColor = System.Drawing.Color.Gray;
             this.label2.Location = new System.Drawing.Point(19, 10);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(60, 21);
@@ -291,11 +305,83 @@
             this.pictureBox1.TabIndex = 42;
             this.pictureBox1.TabStop = false;
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(204)))), ((int)(((byte)(236)))));
+            this.panel1.Location = new System.Drawing.Point(136, 30);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(212, 1);
+            this.panel1.TabIndex = 48;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(204)))), ((int)(((byte)(236)))));
+            this.panel2.Location = new System.Drawing.Point(136, 63);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(212, 1);
+            this.panel2.TabIndex = 49;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(204)))), ((int)(((byte)(236)))));
+            this.panel3.Location = new System.Drawing.Point(136, 99);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(212, 1);
+            this.panel3.TabIndex = 50;
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(204)))), ((int)(((byte)(236)))));
+            this.panel4.Location = new System.Drawing.Point(136, 135);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(212, 1);
+            this.panel4.TabIndex = 51;
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(204)))), ((int)(((byte)(236)))));
+            this.panel5.Location = new System.Drawing.Point(136, 186);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(212, 1);
+            this.panel5.TabIndex = 49;
+            // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(204)))), ((int)(((byte)(236)))));
+            this.panel6.Location = new System.Drawing.Point(82, 241);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(25, 1);
+            this.panel6.TabIndex = 52;
+            // 
+            // panel7
+            // 
+            this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(204)))), ((int)(((byte)(236)))));
+            this.panel7.Location = new System.Drawing.Point(190, 241);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(25, 1);
+            this.panel7.TabIndex = 53;
+            // 
+            // panel8
+            // 
+            this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(204)))), ((int)(((byte)(236)))));
+            this.panel8.Location = new System.Drawing.Point(298, 241);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(25, 1);
+            this.panel8.TabIndex = 53;
+            // 
             // Tab1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(125)))), ((int)(((byte)(255)))));
+            this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.panel8);
+            this.Controls.Add(this.panel7);
+            this.Controls.Add(this.panel6);
+            this.Controls.Add(this.panel5);
+            this.Controls.Add(this.panel4);
+            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.Bronze);
             this.Controls.Add(this.Silver);
             this.Controls.Add(this.Gold);
@@ -347,5 +433,13 @@
         public System.Windows.Forms.TextBox Age;
         public System.Windows.Forms.TextBox NameT;
         public System.Windows.Forms.TextBox Country;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Panel panel8;
     }
 }

@@ -521,7 +521,6 @@ namespace course
 
             // TAB 1 - data base editor
             tab1.Location = new Point(324, 69);
-            tab1.BackColor = Color.FromArgb(125, 0, 0, 0);
 
             tab1.SaveBut.Click += new EventHandler(ElementsPanel_Update);
             tab1.NewBut.Click  += new EventHandler(ElementsPanel_Update);
@@ -530,7 +529,6 @@ namespace course
 
             // TAB 2 - user requests handler
             tab2.Location = new Point(324, 69);
-            tab2.BackColor = Color.FromArgb(125, 0, 0, 0);
             tab2.Visible = false;
 
             tab2.StartBut_4_1.Click += new EventHandler(StartBut_4_1_Click);
@@ -545,7 +543,6 @@ namespace course
 
             // TAB 3 - graphs
             tab3.Location = new Point(324, 69);
-            tab3.BackColor = Color.FromArgb(125, 0, 0, 0);
             tab3.Visible = false;
 
             tab3.StartBut_4_4.Click += new EventHandler(StartBut_4_4_Click);
@@ -569,7 +566,7 @@ namespace course
         void DisableAll()
         {
             // reset color
-            (CurrentTabSender as Button).BackColor = Color.FromArgb(255, 201, 201, 201);
+            (CurrentTabSender as Button).BackColor = Color.FromArgb(228, 163, 212);
 
             // reset transform
             CurrentTabSender.Location = new Point(CurrentTabSender.Location.X + 2, CurrentTabSender.Location.Y + 2);
@@ -584,7 +581,7 @@ namespace course
         private void Transform(object sender)
         {
             CurrentTabSender = (sender as Button);
-            CurrentTabSender.BackColor = Color.FromArgb(255, 123, 165, 240);
+            CurrentTabSender.BackColor = Color.FromArgb(249, 200, 234);
             CurrentTabSender.BringToFront();
             CurrentTabSender.Size = new Size(64, 32);
 
@@ -600,6 +597,7 @@ namespace course
 
             DisableAll();
             tab1.Visible = true;
+            tab1.BringToFront();
 
             Transform(sender);
 

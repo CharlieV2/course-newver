@@ -18,11 +18,6 @@ namespace course
         public Tab1()
         {
             InitializeComponent();
-
-            Color alphazerocolor = Color.FromArgb(0, 0, 0, 0);
-            pictureBox1.BackColor = alphazerocolor;
-            pictureBox2.BackColor = alphazerocolor;
-            pictureBox3.BackColor = alphazerocolor;
         }
 
         public void SelectElement()
@@ -66,16 +61,6 @@ namespace course
         private void RandomBut_Click(object sender, EventArgs e)
         {
             generator.RandomData(this);
-        }
-
-        private void Sport_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Surname_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

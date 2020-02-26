@@ -17,8 +17,8 @@ namespace course
     {
         //-----//
         // цвета элементов
-        public static Color defaultColor = Color.FromArgb(202, 202, 202);
-        public static Color activeColor = Color.FromArgb(66, 191, 244);
+        public static Color defaultColor = Color.FromArgb(217, 205, 224);
+        public static Color activeColor = Color.FromArgb(200, 143, 241);
 
         // отслеживание текущего элемента
         Panel CurrentChoose = null;
@@ -38,7 +38,7 @@ namespace course
             {
                 case "create":
                     actionInfo.Text = $"Created new BD\n{BdName}";
-                    actionPanel.BackColor = Color.FromArgb(140, 115, 253, 198);
+                    actionPanel.BackColor = Color.FromArgb(145, 142, 221);
                     actionPanel.Size = new Size(160, 45);
 
                     actionInfo.Size = new Size(160, 45);
@@ -48,7 +48,7 @@ namespace course
                     string strok = File.ReadAllText(Variables.path + BdName + ".txt").Trim().Split('\n').Length.ToString();
 
                     actionInfo.Text = $"Deleted BD\n{BdName}\n({strok} стр.)";
-                    actionPanel.BackColor = Color.FromArgb(140, 255, 70, 74);
+                    actionPanel.BackColor = Color.FromArgb(238, 99, 79);
                     actionPanel.Size = new Size(160, 62);
 
                     actionInfo.Size = new Size(160, 62);

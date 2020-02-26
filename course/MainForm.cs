@@ -21,7 +21,6 @@ namespace course
         BDhandler bdhandler = new BDhandler();
         //--------//
 
-
         public MainForm()
         {
             InitializeComponent();
@@ -31,9 +30,6 @@ namespace course
         void InitializeControls()
         {
             // настройка прозрачности панелей
-            StartPanel.BackColor = Color.FromArgb(100, 0, 0, 0);
-            ActionsPanel.BackColor = Color.FromArgb(0, 0, 0, 0);
-            RewriteWarning.BackColor = Color.FromArgb(0, 0, 0, 0);
             DirectoryPath.Text = Variables.path;
 
 
@@ -96,7 +92,7 @@ namespace course
                                                                     ActionsPanel.Controls[0].BackColor.G,
                                                                     ActionsPanel.Controls[0].BackColor.B);
 
-                if (ActionsPanel.Controls[0].BackColor.A <= 10) ActionsPanel.Controls.RemoveAt(0);
+                if (ActionsPanel.Controls[0].BackColor.A <= 0) ActionsPanel.Controls.RemoveAt(0);
 
                 Application.DoEvents();
             }
@@ -156,15 +152,5 @@ namespace course
         }
 
         #endregion
-
-        private void RewriteWarning_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void ActionsPanel_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
     }
 }

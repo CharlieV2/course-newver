@@ -43,6 +43,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.BdName = new System.Windows.Forms.TextBox();
             this.ClearBut = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.BDstatusInfoPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BackBut)).BeginInit();
@@ -53,7 +57,7 @@
             this.ElementsPanel.AllowDrop = true;
             this.ElementsPanel.AutoScroll = true;
             this.ElementsPanel.BackColor = System.Drawing.Color.White;
-            this.ElementsPanel.Location = new System.Drawing.Point(323, 67);
+            this.ElementsPanel.Location = new System.Drawing.Point(341, 70);
             this.ElementsPanel.Name = "ElementsPanel";
             this.ElementsPanel.Size = new System.Drawing.Size(286, 354);
             this.ElementsPanel.TabIndex = 17;
@@ -82,7 +86,7 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Segoe UI Light", 10F);
-            this.label3.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(120)))), ((int)(((byte)(214)))));
             this.label3.Location = new System.Drawing.Point(3, 298);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(211, 19);
@@ -108,7 +112,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Segoe UI Light", 10F);
-            this.label1.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(120)))), ((int)(((byte)(214)))));
             this.label1.Location = new System.Drawing.Point(3, 251);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(223, 38);
@@ -133,7 +137,7 @@
             this.BdInfo.AutoSize = true;
             this.BdInfo.BackColor = System.Drawing.Color.Transparent;
             this.BdInfo.Font = new System.Drawing.Font("Segoe UI Light", 12F);
-            this.BdInfo.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.BdInfo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(120)))), ((int)(((byte)(214)))));
             this.BdInfo.Location = new System.Drawing.Point(26, 23);
             this.BdInfo.Name = "BdInfo";
             this.BdInfo.Size = new System.Drawing.Size(223, 21);
@@ -156,7 +160,7 @@
             // 
             // TabInfoPanel
             // 
-            this.TabInfoPanel.BackColor = System.Drawing.Color.RoyalBlue;
+            this.TabInfoPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(200)))), ((int)(((byte)(234)))));
             this.TabInfoPanel.Location = new System.Drawing.Point(324, 67);
             this.TabInfoPanel.Name = "TabInfoPanel";
             this.TabInfoPanel.Size = new System.Drawing.Size(367, 3);
@@ -164,9 +168,10 @@
             // 
             // TabBut1
             // 
-            this.TabBut1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(165)))), ((int)(((byte)(240)))));
+            this.TabBut1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(200)))), ((int)(((byte)(234)))));
             this.TabBut1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(201)))), ((int)(((byte)(201)))));
             this.TabBut1.FlatAppearance.BorderSize = 0;
+            this.TabBut1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(167)))), ((int)(((byte)(222)))));
             this.TabBut1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.TabBut1.Font = new System.Drawing.Font("Segoe UI Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.TabBut1.Location = new System.Drawing.Point(329, 37);
@@ -180,10 +185,11 @@
             // 
             // TabBut2
             // 
-            this.TabBut2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(201)))), ((int)(((byte)(201)))));
+            this.TabBut2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(163)))), ((int)(((byte)(212)))));
             this.TabBut2.Enabled = false;
             this.TabBut2.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(201)))), ((int)(((byte)(201)))));
             this.TabBut2.FlatAppearance.BorderSize = 0;
+            this.TabBut2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(167)))), ((int)(((byte)(222)))));
             this.TabBut2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.TabBut2.Font = new System.Drawing.Font("Segoe UI Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.TabBut2.Location = new System.Drawing.Point(389, 37);
@@ -197,10 +203,11 @@
             // 
             // TabBut3
             // 
-            this.TabBut3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(201)))), ((int)(((byte)(201)))));
+            this.TabBut3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(163)))), ((int)(((byte)(212)))));
             this.TabBut3.Enabled = false;
             this.TabBut3.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(201)))), ((int)(((byte)(201)))));
             this.TabBut3.FlatAppearance.BorderSize = 0;
+            this.TabBut3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(167)))), ((int)(((byte)(222)))));
             this.TabBut3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.TabBut3.Font = new System.Drawing.Font("Segoe UI Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.TabBut3.Location = new System.Drawing.Point(449, 37);
@@ -250,13 +257,48 @@
             this.ClearBut.UseVisualStyleBackColor = false;
             this.ClearBut.Click += new System.EventHandler(this.ClearBut_Click);
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(182)))), ((int)(((byte)(228)))));
+            this.panel1.Location = new System.Drawing.Point(5, 66);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(288, 356);
+            this.panel1.TabIndex = 25;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(200)))), ((int)(((byte)(234)))));
+            this.panel2.Location = new System.Drawing.Point(324, 416);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(367, 3);
+            this.panel2.TabIndex = 19;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(220)))), ((int)(((byte)(241)))));
+            this.panel3.Location = new System.Drawing.Point(324, 70);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(1, 346);
+            this.panel3.TabIndex = 26;
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(220)))), ((int)(((byte)(241)))));
+            this.panel4.Location = new System.Drawing.Point(690, 70);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(1, 346);
+            this.panel4.TabIndex = 27;
+            // 
             // BDhandler
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.panel4);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.BdName);
-            this.Controls.Add(this.ClearBut);
             this.Controls.Add(this.ElementsPanel);
+            this.Controls.Add(this.ClearBut);
             this.Controls.Add(this.BDstatusInfoPanel);
             this.Controls.Add(this.BackBut);
             this.Controls.Add(this.TabInfoPanel);
@@ -264,6 +306,8 @@
             this.Controls.Add(this.TabBut2);
             this.Controls.Add(this.TabBut3);
             this.Controls.Add(this.label2);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panel3);
             this.DoubleBuffered = true;
             this.Name = "BDhandler";
             this.Size = new System.Drawing.Size(694, 426);
@@ -292,5 +336,9 @@
         private System.Windows.Forms.Button ClearBut;
         public System.Windows.Forms.Label BdInfo;
         public System.Windows.Forms.FlowLayoutPanel ElementsPanel;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panel4;
     }
 }
