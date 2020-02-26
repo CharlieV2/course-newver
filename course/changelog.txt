@@ -26,7 +26,7 @@ ver 0.7
 
 
 
-ver 0.8 rc ( rc - realise candidate )
+ver 0.8 rc ( rc - release candidate )
 
 + реализована задача 4.5
 
