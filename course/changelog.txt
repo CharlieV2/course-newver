@@ -3,7 +3,7 @@
 *   Fix
 >   Rework
 #   Notice (may be used to document bugs)
-//
+
 
 ver 0.7
 - удалено отображение панели загрузки ( loading pass )
