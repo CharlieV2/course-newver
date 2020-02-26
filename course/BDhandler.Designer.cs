@@ -254,7 +254,6 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::course.Properties.Resources.d51ea6e460ff3245;
             this.Controls.Add(this.BdName);
             this.Controls.Add(this.ClearBut);
             this.Controls.Add(this.ElementsPanel);

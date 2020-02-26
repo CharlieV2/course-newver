@@ -394,7 +394,6 @@ namespace course
             
             return newChart;
         }
-
         public Chart CreateElements_4_6(Dictionary<string, int> data)
         {
             Chart newChart = new Chart();
