@@ -295,11 +295,10 @@ namespace course
 
             Label lblGold = new Label();
 
-            lblGold.Location = new Point(40, 34);
-            lblGold.Size = new Size(30, 30);
+            lblGold.Location = new Point(35, 35);
+            lblGold.Width = 60;
 
             lblGold.Text = gold.ToString();
-            lblGold.TextAlign = ContentAlignment.MiddleCenter;
             lblGold.ForeColor = Color.White;
             lblGold.Font = new Font("Segoe UI Light", 13, FontStyle.Regular);
 
@@ -309,11 +308,10 @@ namespace course
 
             Label lblSilver = new Label();
 
-            lblSilver.Location = new Point(140, 34);
-            lblSilver.Size = new Size(30, 30);
+            lblSilver.Location = new Point(135, 35);
+            lblSilver.Width = 60;
 
             lblSilver.Text = silver.ToString();
-            lblSilver.TextAlign = ContentAlignment.MiddleCenter;
             lblSilver.ForeColor = Color.White;
             lblSilver.Font = new Font("Segoe UI Light", 13, FontStyle.Regular);
 
@@ -323,19 +321,12 @@ namespace course
 
             Label lblBronze = new Label();
 
-            lblBronze.Location = new Point(240, 34);
-            lblBronze.Size = new Size(30, 30);
+            lblBronze.Location = new Point(235, 35);
+            lblBronze.Width = 60;
 
             lblBronze.Text = bronze.ToString();
-            lblBronze.TextAlign = ContentAlignment.MiddleCenter;
             lblBronze.ForeColor = Color.White;
             lblBronze.Font = new Font("Segoe UI Light", 13, FontStyle.Regular);
-
-
-
-
-
-
             #endregion
 
             MainPanel.Controls.Add(lblCountry);
@@ -349,6 +340,7 @@ namespace course
             return MainPanel;
 
         }
+
         public Chart CreateElements_4_4(List<string> age, List<int> awards)
         {
 
@@ -394,7 +386,6 @@ namespace course
             
             return newChart;
         }
-
         public Chart CreateElements_4_6(Dictionary<string, int> data)
         {
             Chart newChart = new Chart();

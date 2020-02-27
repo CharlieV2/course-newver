@@ -176,10 +176,6 @@ namespace course
                 }
             }
 
-            TabBut1.Enabled = true;
-            TabBut3.Enabled = true;
-            BackBut.Enabled = true;
-
             ElementsPanel.Width = ElementsPanel.Controls.Count > 7 ? 306 : 286;
         }
         private void CreatePanels_4_2(List<Sportsmen> sportsmens)
@@ -191,7 +187,7 @@ namespace course
                 ElementsPanel.Controls.Add(ui.CreateElements_4_2(item.Country, item.Name + " " + item.Surname));
             }
         }
-        private void CreatePanels_4_3(IOrderedEnumerable<KeyValuePair<string, Dictionary<string, int>>> countries)
+        private void CreatePanels_4_3(Dictionary<string, Dictionary<string, int>> countries)
         {
             foreach (var item in countries)
             {
@@ -234,10 +230,9 @@ namespace course
             switch (set)
             {
                 case "general":
-
                     // создание панелей на основе прочитанной бд
                     ElementsPanel.Width = Variables.sportsmens.Count > 4 ? 306 : 286;
-
+                    
                     CreatePanels_General();
                     break;
 
@@ -247,11 +242,6 @@ namespace course
                     // Для заданной страны вывести список команды с указанием
                     // фамилии спортсмена и вида спорта 
                     ElementsPanel_Clear();
-
-                    TabBut1.Enabled = false;
-                    TabBut3.Enabled = false;
-                    BackBut.Enabled = false;
-
                     CreatePanels_4_1();
                     #endregion
                     break;
@@ -261,48 +251,20 @@ namespace course
                     #region task 4.2
                     // Для заданного вида спорта вывести список спортсменов-участников
                     // с указанием страны в порядке возрастания результата
+
                     ElementsPanel_Clear();
+                    List<Sportsmen> rowSportsmens = new List<Sportsmen>();
 
-                    List<Sportsmen> sportsmens = new List<Sportsmen>();
+                    // фильтр по спорту
+                    foreach (Sportsmen item in Variables.sportsmens)
+                        if (item.Sport.ToLower() == tab2.Sport.Text.ToLower()) rowSportsmens.Add(item);
 
-                    Sportsmen Insert; // спортсмен, находящийся в процессе поиска места в списке
-                    Sportsmen Temp;   // временная переменная для обмена местами в списке 
+                    // сортировка
+                    var sortedSportsmens = from item in rowSportsmens
+                                         orderby (int.Parse(item.Gold) + int.Parse(item.Silver) + int.Parse(item.Bronze)) ascending
+                                         select item;
 
-                    int insertCount; // кол-во наград у спортсмена в буфере
-                    int sortCount;   // кол-во наград у спортсмена в списке
-
-
-
-                    // поиск спортсмена по заданному виду спорта
-                    foreach (Sportsmen itemEqual in Variables.sportsmens)
-                    {
-                        if (itemEqual.Sport.ToLower() == tab2.Sport.Text.ToLower())
-                        {
-                            Insert = itemEqual;
-                            // добавление найденного спортсмена с сортировкой по общему кол-ву наград (<)
-                            for (int i = 0; i <= sportsmens.Count - 1; i++)
-                            {
-                                insertCount = int.Parse(Insert.Gold)
-                                            + int.Parse(Insert.Silver)
-                                            + int.Parse(Insert.Bronze);
-
-                                sortCount = int.Parse(sportsmens[i].Gold)
-                                          + int.Parse(sportsmens[i].Silver)
-                                          + int.Parse(sportsmens[i].Bronze);
-
-                                if (insertCount < sortCount)
-                                {
-                                    // вставить спортсмена из буффера на найденное место
-                                    Temp = sportsmens[i];
-                                    sportsmens[i] = Insert;
-                                    Insert = Temp;
-                                }
-                            }
-                            sportsmens.Add(Insert);
-                        }
-                    }
-
-                    CreatePanels_4_2(sportsmens);
+                    CreatePanels_4_2(sortedSportsmens.ToList());
                     #endregion
                     break;
 
@@ -339,10 +301,12 @@ namespace course
 
                     // сортировка
                     var sortedCountries = from pair in countries
-                                          orderby (pair.Value["Gold"] + pair.Value["Silver"] + pair.Value["Bronze"]) descending
-                                          select pair;
+                                       orderby (pair.Value["Gold"] + pair.Value["Silver"] + pair.Value["Bronze"]) descending
+                                       select pair;
 
-                    CreatePanels_4_3(sortedCountries);
+
+
+                    CreatePanels_4_3(sortedCountries.ToDictionary(pair => pair.Key, pair => pair.Value));
                     #endregion
                     break;
 
@@ -636,6 +600,9 @@ namespace course
         }
 
         #endregion <----
+
+
+
 
         #region ---- BDhandler Buttons ---->
 
