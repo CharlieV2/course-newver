@@ -48,7 +48,6 @@ namespace course
             NewBut.Enabled = false;
             generator.NewSportsmen(this);
         }
-
         private void SaveBut_Click(object sender, EventArgs e)
         {
             SaveBut.Enabled = false;
@@ -57,12 +56,10 @@ namespace course
 
             generator.ReWriteSportsmen(this);
         }
-
         private void DelBut_Click(object sender, EventArgs e)
         {
             Variables.sportsmens.Remove(Variables.SelectedSportsmen);
         }
-
         private void RandomBut_Click(object sender, EventArgs e)
         {
             generator.RandomData(this);
@@ -72,7 +69,6 @@ namespace course
         {
 
         }
-
         private void Surname_TextChanged(object sender, EventArgs e)
         {
 

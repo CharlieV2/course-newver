@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Threading;
 using System.IO;
 using System.Windows.Forms.DataVisualization.Charting;
+using course.HelpClasses;
 
 namespace course
 {
@@ -17,7 +18,9 @@ namespace course
     {
         //--------//
         FileWorker fileWorker = new FileWorker();
+
         UIcreator ui = new UIcreator();
+        PanelsCreator panelsCreator = new PanelsCreator();
         //--------//
 
         public BDhandler()
@@ -152,79 +155,6 @@ namespace course
 
         #region ---- ElementsPanel Handler ---->
         // create panels
-        private void CreatePanels_General()
-        {
-            Panel element = new Panel();
-
-            foreach (Sportsmen item in Variables.sportsmens)
-            {
-                element = ui.CreateElements_General(item, tab1);
-                Variables.elements.Add(element);
-
-                ElementsPanel.Controls.Add(element);
-            }
-        }
-        private void CreatePanels_4_1()
-        {
-            string country = tab2.Country.Text;
-
-            foreach (Sportsmen item in Variables.sportsmens)
-            {
-                if (item.Country.ToLower() == country.ToLower())
-                {
-                    ElementsPanel.Controls.Add(ui.CreateElements_4_1(item.Surname, item.Sport));
-                }
-            }
-
-            ElementsPanel.Width = ElementsPanel.Controls.Count > 7 ? 306 : 286;
-        }
-        private void CreatePanels_4_2(List<Sportsmen> sportsmens)
-        {
-            ElementsPanel.Width = sportsmens.Count > 5 ? 306 : 286;
-
-            foreach (Sportsmen item in sportsmens)
-            {
-                ElementsPanel.Controls.Add(ui.CreateElements_4_2(item.Country, item.Name + " " + item.Surname));
-            }
-        }
-        private void CreatePanels_4_3(Dictionary<string, Dictionary<string, int>> countries)
-        {
-            foreach (var item in countries)
-            {
-                ElementsPanel.Controls.Add(ui.CreateElements_4_3(item.Key, item.Value["Gold"], item.Value["Silver"], item.Value["Bronze"]));
-            }
-
-            ElementsPanel.Width = ElementsPanel.Controls.Count > 5 ? 306 : 286;
-        }
-        public void CreatePanels_4_4(List<string> age, List<int> awards)
-        {
-            // add save chart button
-            Button btnSaveChart = ui.NewButton(tab3.StartBut_4_4.Font, tab3.StartBut_4_4.FlatStyle, ElementsPanel);
-
-            // paint 
-            ElementsPanel.Controls.Add(ui.CreateElements_4_4(age, awards));
-            ElementsPanel.Controls.Add(btnSaveChart);
-        }
-        public void CreatePanels_4_5(Dictionary<string, int> data)
-        {
-            // add save chart button
-            Button btnSaveChart = ui.NewButton(tab3.StartBut_4_4.Font, tab3.StartBut_4_4.FlatStyle, ElementsPanel);
-
-            // paint 
-            ElementsPanel.Controls.Add(ui.CreateElements_4_5(data));
-            ElementsPanel.Controls.Add(btnSaveChart);
-        }
-        public void CreatePanels_4_6(Dictionary<string, int> data)
-        {
-            // add save chart button
-            Button btnSaveChart = ui.NewButton(tab3.StartBut_4_4.Font, tab3.StartBut_4_4.FlatStyle, ElementsPanel);
-
-            // paint 
-            ElementsPanel.Controls.Add(ui.CreateElements_4_6(data));
-            ElementsPanel.Controls.Add(btnSaveChart);
-        }
-
-
         public void CreateElementPanels(string set)
         {
             switch (set)
@@ -232,8 +162,8 @@ namespace course
                 case "general":
                     // создание панелей на основе прочитанной бд
                     ElementsPanel.Width = Variables.sportsmens.Count > 4 ? 306 : 286;
-                    
-                    CreatePanels_General();
+
+                    panelsCreator.CreatePanels_General(ElementsPanel, tab1);
                     break;
 
 
@@ -242,7 +172,7 @@ namespace course
                     // Для заданной страны вывести список команды с указанием
                     // фамилии спортсмена и вида спорта 
                     ElementsPanel_Clear();
-                    CreatePanels_4_1();
+                    panelsCreator.CreatePanels_4_1(ElementsPanel, tab2.Country.Text);
                     #endregion
                     break;
 
@@ -264,7 +194,7 @@ namespace course
                                          orderby (int.Parse(item.Gold) + int.Parse(item.Silver) + int.Parse(item.Bronze)) ascending
                                          select item;
 
-                    CreatePanels_4_2(sortedSportsmens.ToList());
+                    panelsCreator.CreatePanels_4_2(ElementsPanel, sortedSportsmens.ToList());
                     #endregion
                     break;
 
@@ -276,7 +206,6 @@ namespace course
                     ElementsPanel_Clear();
 
                     var countries = new Dictionary<string, Dictionary<string, int>>();
-
 
                     // заполнение словаря
                     foreach (Sportsmen item in Variables.sportsmens)
@@ -304,9 +233,7 @@ namespace course
                                        orderby (pair.Value["Gold"] + pair.Value["Silver"] + pair.Value["Bronze"]) descending
                                        select pair;
 
-
-
-                    CreatePanels_4_3(sortedCountries.ToDictionary(pair => pair.Key, pair => pair.Value));
+                    panelsCreator.CreatePanels_4_3(ElementsPanel, sortedCountries.ToDictionary(pair => pair.Key, pair => pair.Value));
                     #endregion
                     break;
 
@@ -357,10 +284,8 @@ namespace course
                         ageChartData.Add(item.Key);
                         avrgAwardsChartData.Add(avrgAwards);
                     }
-
-
-                    CreatePanels_4_4(ageChartData, avrgAwardsChartData);
-
+                    
+                    panelsCreator.CreatePanels_4_4(ElementsPanel, ageChartData, avrgAwardsChartData);
                     #endregion
                     break;
 
@@ -382,7 +307,7 @@ namespace course
                         }
                     }
 
-                    CreatePanels_4_5(data45);
+                    panelsCreator.CreatePanels_4_5(ElementsPanel, data45);
                     #endregion
                     break;
 
@@ -401,7 +326,7 @@ namespace course
                             data46.Add(item.Country, 1);
                     }
 
-                    CreatePanels_4_6(data46);
+                    panelsCreator.CreatePanels_4_6(ElementsPanel, data46);
                     #endregion
                     break;
             }
