@@ -332,8 +332,6 @@ namespace course
             }
         }
 
-
-
         private void ElementsPanel_Clear()
         {
             // очистка текстовых полей
@@ -402,7 +400,6 @@ namespace course
         public Tab3 tab3 = new Tab3();
 
         Button CurrentTabSender;
-
 
         void InitializeTabControl()
         {
@@ -528,9 +525,7 @@ namespace course
 
 
 
-
         #region ---- BDhandler Buttons ---->
-
         private void BackBut_Animation_Enter(object sender, EventArgs e)
         {
             BackBut.Image = Properties.Resources.Back_Active;
@@ -547,7 +542,6 @@ namespace course
         #endregion <----
 
         #region ---- Drag and Drop ---->
-
         private void Panel_DragEnter(object sender, DragEventArgs e)
         {
             if (e.Data.GetDataPresent(DataFormats.FileDrop, false) == true)
