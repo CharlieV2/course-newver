@@ -68,11 +68,11 @@ namespace course
                 sportsmen.Country =   sportsmenRowInfo[0];
                 sportsmen.Name =      sportsmenRowInfo[1];
                 sportsmen.Surname =   sportsmenRowInfo[2];
-                sportsmen.Age =       sportsmenRowInfo[3];
+                sportsmen.Age =       int.Parse(sportsmenRowInfo[3]);
                 sportsmen.Sport =     sportsmenRowInfo[4];
-                sportsmen.Gold =      sportsmenRowInfo[5];
-                sportsmen.Silver =    sportsmenRowInfo[6];
-                sportsmen.Bronze =    sportsmenRowInfo[7];
+                sportsmen.Gold =      int.Parse(sportsmenRowInfo[5]);
+                sportsmen.Silver =    int.Parse(sportsmenRowInfo[6]);
+                sportsmen.Bronze =    int.Parse(sportsmenRowInfo[7]);
 
                 Variables.sportsmens.Add(sportsmen);
             }
