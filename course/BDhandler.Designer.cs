@@ -41,8 +41,8 @@
             this.TabBut2 = new System.Windows.Forms.Button();
             this.TabBut3 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.BdName = new System.Windows.Forms.TextBox();
             this.ClearBut = new System.Windows.Forms.Button();
+            this.BdName = new System.Windows.Forms.ComboBox();
             this.BDstatusInfoPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BackBut)).BeginInit();
@@ -224,17 +224,6 @@
             this.label2.TabIndex = 16;
             this.label2.Text = "Имя базы данных:";
             // 
-            // BdName
-            // 
-            this.BdName.BackColor = System.Drawing.Color.White;
-            this.BdName.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.BdName.Location = new System.Drawing.Point(6, 33);
-            this.BdName.Name = "BdName";
-            this.BdName.Size = new System.Drawing.Size(226, 29);
-            this.BdName.TabIndex = 15;
-            this.BdName.TabStop = false;
-            this.BdName.TextChanged += new System.EventHandler(this.BdName_TextChanged);
-            // 
             // ClearBut
             // 
             this.ClearBut.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(201)))), ((int)(((byte)(201)))));
@@ -249,6 +238,18 @@
             this.ClearBut.Text = "Clear";
             this.ClearBut.UseVisualStyleBackColor = false;
             this.ClearBut.Click += new System.EventHandler(this.ClearBut_Click);
+            // 
+            // BdName
+            // 
+            this.BdName.Font = new System.Drawing.Font("Segoe UI Light", 12F);
+            this.BdName.FormattingEnabled = true;
+            this.BdName.Location = new System.Drawing.Point(6, 33);
+            this.BdName.Name = "BdName";
+            this.BdName.Size = new System.Drawing.Size(226, 29);
+            this.BdName.TabIndex = 0;
+            this.BdName.TabStop = false;
+            this.BdName.SelectedIndexChanged += new System.EventHandler(this.BdName_TextChanged);
+            this.BdName.TextUpdate += new System.EventHandler(this.BdName_TextChanged);
             // 
             // BDhandler
             // 
@@ -286,12 +287,12 @@
         public System.Windows.Forms.Button TabBut3;
         private System.Windows.Forms.Label label2;
         public System.Windows.Forms.PictureBox BackBut;
-        public System.Windows.Forms.TextBox BdName;
         public System.Windows.Forms.TextBox DirectoryPath;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button ClearBut;
         public System.Windows.Forms.Label BdInfo;
         public System.Windows.Forms.FlowLayoutPanel ElementsPanel;
+        public System.Windows.Forms.ComboBox BdName;
     }
 }

@@ -117,7 +117,6 @@ namespace course
     "сана!";
             this.RewriteWarning.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.RewriteWarning.Visible = false;
-            this.RewriteWarning.Click += new System.EventHandler(this.RewriteWarning_Click);
             // 
             // label2
             // 
@@ -217,7 +216,6 @@ namespace course
             this.ActionsPanel.Name = "ActionsPanel";
             this.ActionsPanel.Size = new System.Drawing.Size(160, 402);
             this.ActionsPanel.TabIndex = 6;
-            this.ActionsPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.ActionsPanel_Paint);
             // 
             // AnimationTimer
             // 
