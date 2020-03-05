@@ -145,10 +145,20 @@ namespace course
             }
         }
 
-        private void DirectoryPath_TextChanged(object sender, EventArgs e)
+        public void DirectoryPath_TextChanged(object sender, EventArgs e)
         {
             Variables.path = DirectoryPath.Text;
-            BdName.Clear();
+            BdName.SelectedIndex = -1;
+
+            BdName.Items.Clear();
+
+            string[] files = Directory.GetFiles(Variables.path, "*.bd");
+            for (int i = 0; i < files.Length; i++)
+            {
+                files[i] = Path.GetFileNameWithoutExtension(files[i]);
+            }
+
+            BdName.Items.AddRange(files);
         }
 
         #endregion <----
@@ -191,7 +201,7 @@ namespace course
 
                     // сортировка
                     var sortedSportsmens = from item in rowSportsmens
-                                         orderby (int.Parse(item.Gold) + int.Parse(item.Silver) + int.Parse(item.Bronze)) ascending
+                                         orderby (item.Gold + item.Silver + item.Bronze) ascending
                                          select item;
 
                     panelsCreator.CreatePanels_4_2(ElementsPanel, sortedSportsmens.ToList());
@@ -212,17 +222,17 @@ namespace course
                     {
                         if (countries.ContainsKey(item.Country))
                         {
-                            countries[item.Country]["Gold"] += int.Parse(item.Gold);
-                            countries[item.Country]["Silver"] += int.Parse(item.Silver);
-                            countries[item.Country]["Bronze"] += int.Parse(item.Bronze);
+                            countries[item.Country]["Gold"] += item.Gold;
+                            countries[item.Country]["Silver"] += item.Silver;
+                            countries[item.Country]["Bronze"] += item.Bronze;
                         }
                         else
                         {
                             countries.Add(item.Country, new Dictionary<string, int>());
 
-                            countries[item.Country].Add("Gold", int.Parse(item.Gold));
-                            countries[item.Country].Add("Silver", int.Parse(item.Silver));
-                            countries[item.Country].Add("Bronze", int.Parse(item.Bronze));
+                            countries[item.Country].Add("Gold", item.Gold);
+                            countries[item.Country].Add("Silver", item.Silver);
+                            countries[item.Country].Add("Bronze", item.Bronze);
                         }
 
                     }
@@ -250,17 +260,17 @@ namespace course
                     {
                         if (item.Sport.ToLower() == tab3.Sport44.Text.ToLower())
                         {
-                            if (rowChartData.ContainsKey(item.Age))
+                            if (rowChartData.ContainsKey(item.Age.ToString()))
                             {
-                                rowChartData[item.Age][0] += int.Parse(item.Gold) + int.Parse(item.Silver) + int.Parse(item.Bronze);
-                                rowChartData[item.Age][1]++;
+                                rowChartData[item.Age.ToString()][0] += item.Gold + item.Silver + item.Bronze;
+                                rowChartData[item.Age.ToString()][1]++;
                             }
                             else
                             {
-                                rowChartData.Add(item.Age, new List<int>());
+                                rowChartData.Add(item.Age.ToString(), new List<int>());
 
-                                rowChartData[item.Age].Add(int.Parse(item.Gold) + int.Parse(item.Silver) + int.Parse(item.Bronze));
-                                rowChartData[item.Age].Add(1);
+                                rowChartData[item.Age.ToString()].Add(item.Gold + item.Silver + item.Bronze);
+                                rowChartData[item.Age.ToString()].Add(1);
                             }
                         }
                     }
@@ -536,7 +546,7 @@ namespace course
         }
         private void ClearBut_Click(object sender, EventArgs e)
         {
-            BdName.Clear();
+            BdName.SelectedIndex = -1;
         }
 
         #endregion <----
@@ -553,7 +563,7 @@ namespace course
         {
             string[] file = (string[])e.Data.GetData(DataFormats.FileDrop);
 
-            if (Path.GetExtension(file[0]) == ".txt")
+            if (Path.GetExtension(file[0]) == ".bd")
             {
                 Variables.path = Path.GetDirectoryName(file[0]) + @"\";
                 DirectoryPath.Text = Variables.path;
@@ -562,7 +572,7 @@ namespace course
             }
             else
             {
-                BdInfo.Text = "Формат загружаемого файла\nдолжен быть txt";
+                BdInfo.Text = "Формат загружаемого файла\nдолжен быть bd";
                 BdInfo.Location = new Point(ElementsPanel.Width / 2 - BdInfo.Width / 2, BdInfo.Location.Y);
 
                 BdInfo.Visible = true;

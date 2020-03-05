@@ -14,16 +14,16 @@ namespace course
         // bd
         public string CheckBd(string BdName)
         {
-            if (File.Exists(Variables.path + BdName + ".txt"))
+            if (File.Exists(Variables.path + BdName + ".bd"))
             {
-                if (File.ReadAllText(Variables.path + BdName + ".txt") == "") return "empty"; else return "has data";
+                if (File.ReadAllText(Variables.path + BdName + ".bd") == "") return "empty"; else return "has data";
             }
             else return "not exists";
         }
 
         public void CreateBd(string BdName)
         {
-            File.WriteAllText(Variables.path + BdName + ".txt", "");
+            File.WriteAllText(Variables.path + BdName + ".bd", "");
         }
 
         public void SaveBd(string BdName)
@@ -42,12 +42,12 @@ namespace course
                              item.Bronze + "\n");
             }
 
-            File.WriteAllText(Variables.path + BdName + ".txt", final.ToString());
+            File.WriteAllText(Variables.path + BdName + ".bd", final.ToString());
         }
 
         public void DeleteBD(string BdName)
         {
-            if (File.Exists(Variables.path + BdName + ".txt")) File.Delete(Variables.path + BdName + ".txt");
+            if (File.Exists(Variables.path + BdName + ".bd")) File.Delete(Variables.path + BdName + ".bd");
         }
 
         public void ReadBD(string BdName)
@@ -56,7 +56,7 @@ namespace course
             Variables.sportsmens.Clear();
 
             // чтение БД (массив строк, строка = спортсмен)
-            string[] rowData = File.ReadAllText(Variables.path + BdName + ".txt").Trim().Split('\n');
+            string[] rowData = File.ReadAllText(Variables.path + BdName + ".bd").Trim().Split('\n');
 
             // в строке: 0-Country 1-Name 2-Surname 3-Age 4-Sport 5-Gold 6-Silver 7-Bronze
             foreach (string item in rowData)

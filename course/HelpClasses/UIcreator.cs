@@ -45,7 +45,7 @@ namespace course
                     break;
 
                 case "delete":
-                    string strok = File.ReadAllText(Variables.path + BdName + ".txt").Trim().Split('\n').Length.ToString();
+                    string strok = File.ReadAllText(Variables.path + BdName + ".bd").Trim().Split('\n').Length.ToString();
 
                     actionInfo.Text = $"Deleted BD\n{BdName}\n({strok} стр.)";
                     actionPanel.BackColor = Color.FromArgb(140, 255, 70, 74);
@@ -137,7 +137,7 @@ namespace course
 
             // золото
             PictureBox goldimage = NewPictureBox(Resources.gold, new Point(140, 5));
-            Label goldlab = NewLabel(sportsmen.Gold, new Point(140, 40));
+            Label goldlab = NewLabel(sportsmen.Gold.ToString(), new Point(140, 40));
 
             goldlab.TextAlign = ContentAlignment.MiddleCenter;
             goldlab.Size = new Size(30, 15);
@@ -145,14 +145,14 @@ namespace course
 
             // серебро
             PictureBox silverimage = NewPictureBox(Resources.silver, new Point(180, 5));
-            Label silverlab = NewLabel(sportsmen.Silver, new Point(180, 40));
+            Label silverlab = NewLabel(sportsmen.Silver.ToString(), new Point(180, 40));
 
             silverlab.TextAlign = ContentAlignment.MiddleCenter;
             silverlab.Size = new Size(30, 15);
 
             // бронза
             PictureBox bronzeimage = NewPictureBox(Resources.bronze, new Point(220, 5));
-            Label bronzelab = NewLabel(sportsmen.Bronze, new Point(220, 40));
+            Label bronzelab = NewLabel(sportsmen.Bronze.ToString(), new Point(220, 40));
 
             bronzelab.TextAlign = ContentAlignment.MiddleCenter;
             bronzelab.Size = new Size(30, 15);

@@ -75,7 +75,7 @@ namespace course
             {
                 NewBDBut.Enabled = true;
 
-                if (File.Exists(Variables.path + BdName.Text + ".txt"))
+                if (File.Exists(Variables.path + BdName.Text + ".bd"))
                 {
                     DeleteBDBut.Enabled = true;
                     RewriteWarning.Visible = true;
@@ -113,11 +113,13 @@ namespace course
             {
                 ActionsPanel.Controls.RemoveAt(0);
             }
+
+            bdhandler.DirectoryPath_TextChanged(null, null);
         }
         private void BDhandlerBackBut_Click(object sender, EventArgs e)
         {
             bdhandler.Visible = false;
-            bdhandler.BdName.Clear();
+            bdhandler.BdName.SelectedIndex = -1;
             bdhandler.BdInfo.Visible = false;
 
             DirectoryPath.Text = Variables.path;
@@ -146,7 +148,7 @@ namespace course
         {
             string[] file = (string[])e.Data.GetData(DataFormats.FileDrop);
 
-            if (Path.GetExtension(file[0]) == ".txt")
+            if (Path.GetExtension(file[0]) == ".bd")
             {
                 Variables.path = Path.GetDirectoryName(file[0]) + @"\";
                 DirectoryPath.Text = Variables.path;
@@ -156,15 +158,5 @@ namespace course
         }
 
         #endregion
-
-        private void RewriteWarning_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void ActionsPanel_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
     }
 }
