@@ -5,7 +5,7 @@
 #   Notice (may be used to document bugs)
 
 
-ver 0.7
+[ver 0.7]
 
 - удалено отображение панели загрузки ( loading pass )
 
@@ -27,7 +27,7 @@ ver 0.7
 
 
 
-ver 0.8 rc ( rc - release candidate )
+[ver 0.8 rc ( rc - release candidate )]
 
 + реализована задача 4.5
 
@@ -38,7 +38,7 @@ ver 0.8 rc ( rc - release candidate )
 
 
 
-ver 0.8.1 - refactoring
+[ver 0.8.1 - refactoring]
 
 > алгоритм сортировки массива заменён на Linq в BDhandler.CreateElementPanels(4.2)
 
@@ -50,7 +50,21 @@ ver 0.8.1 - refactoring
 
 
 
-ver 0.8.2
+[ver 0.8.2]
 
 > все методы, для создания панелей и заполнения ими ElementsPanel перемещены в класс PanelsCreator
 >> вызов методов происходит из BDhandler.CreateElementPanels
+
+> SaveChart заменён на NameOfChart
+>> метод SaveImage, для сохранения графика, теперь используется в btnSaveChart_Click
+
+> FileWorker.SaveBd - сохранение БД реализовано через StringBuilder
+
+> тип полей Age, Gold, Silver, Bronze класса Sportsmen изменён на int
+
+- убраны методы Generator.NewSportsmen и Generator.RewriteSportsmen
+>> их реализация теперь находится в Tab1.NewBut_Click и Tab1.SaveBut_CLick соответственно
+
+> переработан метод Generator.RandomData
+>> теперь метод возвращает заполненный случайными значениями экземпляр класса Sportsmen
+++ в Tab1.RandomBut_CLick добавлено заполнение полей соотвествующими данными, полученными из метода Generator.RandomData

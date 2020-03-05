@@ -162,7 +162,6 @@
             this.Sport.Size = new System.Drawing.Size(212, 27);
             this.Sport.TabIndex = 37;
             this.Sport.TabStop = false;
-            this.Sport.TextChanged += new System.EventHandler(this.Sport_TextChanged);
             // 
             // Age
             // 
@@ -181,7 +180,6 @@
             this.Surname.Size = new System.Drawing.Size(212, 27);
             this.Surname.TabIndex = 35;
             this.Surname.TabStop = false;
-            this.Surname.TextChanged += new System.EventHandler(this.Surname_TextChanged);
             // 
             // NameT
             // 

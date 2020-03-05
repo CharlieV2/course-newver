@@ -12,9 +12,9 @@ namespace course
         public string Name      { get; set; }
         public string Surname   { get; set; }
         public string Sport     { get; set; }
-        public string Age       { get; set; }
-        public string Gold      { get; set; }
-        public string Silver    { get; set; }
-        public string Bronze    { get; set; }
+        public int Age          { get; set; }
+        public int Gold         { get; set; }
+        public int Silver       { get; set; }
+        public int Bronze       { get; set; }
     }
 }

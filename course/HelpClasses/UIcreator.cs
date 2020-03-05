@@ -104,7 +104,12 @@ namespace course
             btn.Text = "Save chart";
             btn.Size = new Size(280, 30);
             btn.Click += new EventHandler(btnSaveChart_Click);
-            void btnSaveChart_Click(object sender, EventArgs e) => fileWorker.SaveChart((ElementsPanel.Controls[0] as Chart), sender);
+            void btnSaveChart_Click(object sender, EventArgs e)
+            {
+                string name = fileWorker.NameOfChart();
+
+                (ElementsPanel.Controls[0] as Chart).SaveImage(name, ChartImageFormat.Png);
+            }
 
             return btn;
         }

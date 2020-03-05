@@ -32,82 +32,51 @@ namespace course
         string[] Sport = { "Biathlon", "Bobsleigh", "Curling", "Snowboard", "Ski race", "Skiing", };
         #endregion
 
-
-        public void NewSportsmen(Tab1 tab)
-        {
-            Sportsmen sportsmen = new Sportsmen();
-
-            sportsmen.Country   = tab.Country.Text == ""    ? "Country"     : tab.Country.Text;
-            sportsmen.Name      = tab.NameT.Text == ""      ? "Name"        : tab.NameT.Text;
-            sportsmen.Surname   = tab.Surname.Text == ""    ? "Surname"     : tab.Surname.Text;
-            sportsmen.Age       = tab.Age.Text == ""        ? "0"           : tab.Age.Text;
-            sportsmen.Sport     = tab.Sport.Text == ""      ? "Sport"       : tab.Sport.Text;
-            sportsmen.Gold      = tab.Gold.Text == ""       ? "0"           : tab.Gold.Text;
-            sportsmen.Silver    = tab.Silver.Text == ""     ? "0"           : tab.Silver.Text;
-            sportsmen.Bronze    = tab.Bronze.Text == ""     ? "0"           : tab.Bronze.Text;
-
-            Variables.sportsmens.Add(sportsmen);
-        }
-
-        public void ReWriteSportsmen(Tab1 tab)
-        {
-            Sportsmen sportsmen = new Sportsmen();
-
-            sportsmen.Country    = tab.Country.Text;
-            sportsmen.Name       = tab.NameT.Text;
-            sportsmen.Surname    = tab.Surname.Text;
-            sportsmen.Age        = tab.Age.Text;
-            sportsmen.Sport      = tab.Sport.Text;
-
-            sportsmen.Gold       = tab.Gold.Text;
-            sportsmen.Silver     = tab.Silver.Text;
-            sportsmen.Bronze     = tab.Bronze.Text;
-
-            Variables.sportsmens[Variables.tmpIndex] = sportsmen;
-        }
-
-        public void RandomData(Tab1 tab)
+        public Sportsmen RandomData()
         {
             Random random = new Random();
+            Sportsmen sportsmen = new Sportsmen();
 
-            tab.Country.Text = countryArray[random.Next(0, countryArray.Length)];
-            switch (tab.Country.Text)
+            sportsmen.Country = countryArray[random.Next(0, countryArray.Length)];
+            switch (sportsmen.Country)
             {
                 case "Japan":
-                    tab.NameT.Text = JapanNameArray[random.Next(0, JapanNameArray.Length)];
-                    tab.Surname.Text = JapanSurnameArray[random.Next(0, JapanSurnameArray.Length)];
+                    sportsmen.Name = JapanNameArray[random.Next(0, JapanNameArray.Length)];
+                    sportsmen.Surname = JapanSurnameArray[random.Next(0, JapanSurnameArray.Length)];
                     break;
                 case "Germany":
-                    tab.NameT.Text = GermanyNameArray[random.Next(0, GermanyNameArray.Length)];
-                    tab.Surname.Text = GermanySurnameArray[random.Next(0, GermanySurnameArray.Length)];
+                    sportsmen.Name = GermanyNameArray[random.Next(0, GermanyNameArray.Length)];
+                    sportsmen.Surname = GermanySurnameArray[random.Next(0, GermanySurnameArray.Length)];
                     break;
                 case "Russian":
-                    tab.NameT.Text = RussianNameArray[random.Next(0, RussianNameArray.Length)];
-                    tab.Surname.Text = RussianSurnameArray[random.Next(0, RussianSurnameArray.Length)];
+                    sportsmen.Name = RussianNameArray[random.Next(0, RussianNameArray.Length)];
+                    sportsmen.Surname = RussianSurnameArray[random.Next(0, RussianSurnameArray.Length)];
                     break;
                 case "French":
-                    tab.NameT.Text = FrenchNameArray[random.Next(0, FrenchNameArray.Length)];
-                    tab.Surname.Text = FrenchSurnameArray[random.Next(0, FrenchSurnameArray.Length)];
+                    sportsmen.Name = FrenchNameArray[random.Next(0, FrenchNameArray.Length)];
+                    sportsmen.Surname = FrenchSurnameArray[random.Next(0, FrenchSurnameArray.Length)];
                     break;
                 case "Gr. Britain":
-                    tab.NameT.Text = EnNameArray[random.Next(0, EnNameArray.Length)];
-                    tab.Surname.Text = EnSurnameArray[random.Next(0, EnSurnameArray.Length)];
+                    sportsmen.Name = EnNameArray[random.Next(0, EnNameArray.Length)];
+                    sportsmen.Surname = EnSurnameArray[random.Next(0, EnSurnameArray.Length)];
                     break;
                 case "USA":
-                    tab.NameT.Text = EnNameArray[random.Next(0, EnNameArray.Length)];
-                    tab.Surname.Text = EnSurnameArray[random.Next(0, EnSurnameArray.Length)];
+                    sportsmen.Name = EnNameArray[random.Next(0, EnNameArray.Length)];
+                    sportsmen.Surname = EnSurnameArray[random.Next(0, EnSurnameArray.Length)];
                     break;
                 case "Canada":
-                    tab.NameT.Text = CanadaNameArray[random.Next(0, CanadaNameArray.Length)];
-                    tab.Surname.Text = CanadaSurnameArray[random.Next(0, CanadaSurnameArray.Length)];
+                    sportsmen.Name = CanadaNameArray[random.Next(0, CanadaNameArray.Length)];
+                    sportsmen.Surname = CanadaSurnameArray[random.Next(0, CanadaSurnameArray.Length)];
                     break;
             }
 
-            tab.Age.Text = random.Next(25, 51).ToString();
-            tab.Sport.Text = Sport[random.Next(0, Sport.Length)];
-            tab.Gold.Text = random.Next(0, 8).ToString();
-            tab.Silver.Text = random.Next(0, 14).ToString();
-            tab.Bronze.Text = random.Next(0, 21).ToString();
+            sportsmen.Age = random.Next(25, 51);
+            sportsmen.Sport = Sport[random.Next(0, Sport.Length)];
+            sportsmen.Gold = random.Next(0, 8);
+            sportsmen.Silver = random.Next(0, 14);
+            sportsmen.Bronze = random.Next(0, 21);
+
+            return sportsmen;
         }
     }
 }

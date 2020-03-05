@@ -15,7 +15,9 @@ namespace course
         public string CheckBd(string BdName)
         {
             if (File.Exists(Variables.path + BdName + ".txt"))
+            {
                 if (File.ReadAllText(Variables.path + BdName + ".txt") == "") return "empty"; else return "has data";
+            }
             else return "not exists";
         }
 
@@ -26,21 +28,21 @@ namespace course
 
         public void SaveBd(string BdName)
         {
-            string final = "";
-
+            StringBuilder final = new StringBuilder();
+            
             foreach(Sportsmen item in Variables.sportsmens)
             {
-                final += item.Country + "_" +
-                         item.Name + "_" +
-                         item.Surname + "_" +
-                         item.Age + "_" +
-                         item.Sport + "_" +
-                         item.Gold + "_" +
-                         item.Silver + "_" +
-                         item.Bronze + "\n";
+                final.Append(item.Country + "_" +
+                             item.Name + "_" +
+                             item.Surname + "_" +
+                             item.Age + "_" +
+                             item.Sport + "_" +
+                             item.Gold + "_" +
+                             item.Silver + "_" +
+                             item.Bronze + "\n");
             }
 
-            File.WriteAllText(Variables.path + BdName + ".txt", final);
+            File.WriteAllText(Variables.path + BdName + ".txt", final.ToString());
         }
 
         public void DeleteBD(string BdName)
@@ -78,18 +80,16 @@ namespace course
 
 
         // chart
-        public void SaveChart(Chart chart, object sender)
+        public string NameOfChart()
         {
-            (sender as Button).Enabled = false;
-
             string name = "Chart ";
             int counter = 1;
 
             while (File.Exists(Variables.path + name + counter + ".png")) counter++;
 
-            chart.SaveImage(Variables.path + name + counter + ".png", ChartImageFormat.Png);
+            name = Variables.path + name + counter + ".png";
 
-            (sender as Button).Enabled = true;
+            return name;
         }
     }
 }
