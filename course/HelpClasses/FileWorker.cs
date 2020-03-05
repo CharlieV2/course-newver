@@ -65,11 +65,11 @@ namespace course
 
                 Sportsmen sportsmen = new Sportsmen();
 
-                sportsmen.Country =   sportsmenRowInfo[0];
-                sportsmen.Name =      sportsmenRowInfo[1];
-                sportsmen.Surname =   sportsmenRowInfo[2];
+                sportsmen.Country =             sportsmenRowInfo[0];
+                sportsmen.Name =                sportsmenRowInfo[1];
+                sportsmen.Surname =             sportsmenRowInfo[2];
                 sportsmen.Age =       int.Parse(sportsmenRowInfo[3]);
-                sportsmen.Sport =     sportsmenRowInfo[4];
+                sportsmen.Sport =               sportsmenRowInfo[4];
                 sportsmen.Gold =      int.Parse(sportsmenRowInfo[5]);
                 sportsmen.Silver =    int.Parse(sportsmenRowInfo[6]);
                 sportsmen.Bronze =    int.Parse(sportsmenRowInfo[7]);
