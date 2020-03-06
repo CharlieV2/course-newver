@@ -9,7 +9,7 @@ namespace course
     public class Generator
     {
         #region InfoBase
-        string[] countryArray = { "Japan", "Germany", "Russian", "French", "Gr. Britain", "USA", "Canada" };
+        string[] countryArray = { "Japan", "Germany", "Russia", "French", "Gr. Britain", "USA", "Canada" };
 
         string[] JapanNameArray = { "Ai", "Aiko", "Akako", "Akane", "Akemi", "Aki", "Chika", "Chikako ", "Cho ", "Dai ", "Hoshi ", "Akeno ", "Akiyama ", "Fudo ", "Naruto ", "Sasuke ", "Botan ", "Daiki ", "Haru ", "Jiro ", "Kanaye ", "Kano ", "Kazuo ", "Rafu ", "Nikk" };
         string[] JapanSurnameArray = { "Sato", "Sudjuki", "Ito", "Yamat", "Kato", "Sasaki", "Uchiha", "Uzumaki", "Yamaguti", "Hayasi", "Abe", "Goto", "Ocade", "Ono", "Takano", "Seke", "Homma" };

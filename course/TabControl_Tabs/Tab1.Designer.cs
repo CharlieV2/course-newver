@@ -35,11 +35,9 @@
             this.SaveBut = new System.Windows.Forms.Button();
             this.DelBut = new System.Windows.Forms.Button();
             this.NewBut = new System.Windows.Forms.Button();
-            this.Sport = new System.Windows.Forms.TextBox();
             this.Age = new System.Windows.Forms.TextBox();
             this.Surname = new System.Windows.Forms.TextBox();
             this.NameT = new System.Windows.Forms.TextBox();
-            this.Country = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -48,6 +46,8 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.Sport = new System.Windows.Forms.ComboBox();
+            this.Country = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -154,15 +154,6 @@
             this.NewBut.UseVisualStyleBackColor = false;
             this.NewBut.Click += new System.EventHandler(this.NewBut_Click);
             // 
-            // Sport
-            // 
-            this.Sport.Font = new System.Drawing.Font("Segoe UI Light", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Sport.Location = new System.Drawing.Point(136, 167);
-            this.Sport.Name = "Sport";
-            this.Sport.Size = new System.Drawing.Size(212, 27);
-            this.Sport.TabIndex = 37;
-            this.Sport.TabStop = false;
-            // 
             // Age
             // 
             this.Age.Font = new System.Drawing.Font("Segoe UI Light", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -189,15 +180,6 @@
             this.NameT.Size = new System.Drawing.Size(212, 27);
             this.NameT.TabIndex = 34;
             this.NameT.TabStop = false;
-            // 
-            // Country
-            // 
-            this.Country.Font = new System.Drawing.Font("Segoe UI Light", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Country.Location = new System.Drawing.Point(136, 8);
-            this.Country.Name = "Country";
-            this.Country.Size = new System.Drawing.Size(212, 27);
-            this.Country.TabIndex = 33;
-            this.Country.TabStop = false;
             // 
             // label5
             // 
@@ -289,11 +271,50 @@
             this.pictureBox1.TabIndex = 42;
             this.pictureBox1.TabStop = false;
             // 
+            // Sport
+            // 
+            this.Sport.Font = new System.Drawing.Font("Segoe UI Light", 11.25F);
+            this.Sport.FormattingEnabled = true;
+            this.Sport.Items.AddRange(new object[] {
+            "",
+            "Biathlon",
+            "Bobsleigh",
+            "Curling",
+            "Snowboard",
+            "Ski race",
+            "Skiing"});
+            this.Sport.Location = new System.Drawing.Point(136, 166);
+            this.Sport.Name = "Sport";
+            this.Sport.Size = new System.Drawing.Size(212, 28);
+            this.Sport.TabIndex = 48;
+            this.Sport.TabStop = false;
+            // 
+            // Country
+            // 
+            this.Country.Font = new System.Drawing.Font("Segoe UI Light", 11.25F);
+            this.Country.FormattingEnabled = true;
+            this.Country.Items.AddRange(new object[] {
+            "",
+            "Japan",
+            "Germany",
+            "Russia",
+            "French",
+            "Gr. Britain",
+            "USA",
+            "Canada"});
+            this.Country.Location = new System.Drawing.Point(136, 8);
+            this.Country.Name = "Country";
+            this.Country.Size = new System.Drawing.Size(212, 28);
+            this.Country.TabIndex = 49;
+            this.Country.TabStop = false;
+            // 
             // Tab1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(125)))), ((int)(((byte)(255)))));
+            this.Controls.Add(this.Country);
+            this.Controls.Add(this.Sport);
             this.Controls.Add(this.Bronze);
             this.Controls.Add(this.Silver);
             this.Controls.Add(this.Gold);
@@ -304,11 +325,9 @@
             this.Controls.Add(this.SaveBut);
             this.Controls.Add(this.DelBut);
             this.Controls.Add(this.NewBut);
-            this.Controls.Add(this.Sport);
             this.Controls.Add(this.Age);
             this.Controls.Add(this.Surname);
             this.Controls.Add(this.NameT);
-            this.Controls.Add(this.Country);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -338,12 +357,12 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         public System.Windows.Forms.TextBox Surname;
-        public System.Windows.Forms.TextBox Sport;
         public System.Windows.Forms.TextBox Bronze;
         public System.Windows.Forms.TextBox Silver;
         public System.Windows.Forms.TextBox Gold;
         public System.Windows.Forms.TextBox Age;
         public System.Windows.Forms.TextBox NameT;
-        public System.Windows.Forms.TextBox Country;
+        private System.Windows.Forms.ComboBox Sport;
+        private System.Windows.Forms.ComboBox Country;
     }
 }
