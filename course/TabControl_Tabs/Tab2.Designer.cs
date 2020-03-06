@@ -28,28 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.Country = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.StartBut_4_1 = new System.Windows.Forms.Button();
             this.StartBut_4_2 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.Sport = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.StartBut_4_3 = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
+            this.Country = new System.Windows.Forms.ComboBox();
+            this.Sport = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
-            // 
-            // Country
-            // 
-            this.Country.Font = new System.Drawing.Font("Segoe UI Light", 11F);
-            this.Country.Location = new System.Drawing.Point(123, 71);
-            this.Country.Name = "Country";
-            this.Country.Size = new System.Drawing.Size(116, 27);
-            this.Country.TabIndex = 35;
-            this.Country.TabStop = false;
-            this.Country.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.Country.TextChanged += new System.EventHandler(this.Country_TextChanged);
             // 
             // label2
             // 
@@ -124,17 +113,6 @@
             this.label3.Text = "Задача 4.2";
             this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
-            // Sport
-            // 
-            this.Sport.Font = new System.Drawing.Font("Segoe UI Light", 11F);
-            this.Sport.Location = new System.Drawing.Point(123, 168);
-            this.Sport.Name = "Sport";
-            this.Sport.Size = new System.Drawing.Size(116, 27);
-            this.Sport.TabIndex = 41;
-            this.Sport.TabStop = false;
-            this.Sport.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.Sport.TextChanged += new System.EventHandler(this.Sport_TextChanged);
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -178,20 +156,57 @@
             this.label5.Text = "Задача 4.3";
             this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
+            // Country
+            // 
+            this.Country.Font = new System.Drawing.Font("Segoe UI Light", 11.25F);
+            this.Country.FormattingEnabled = true;
+            this.Country.Items.AddRange(new object[] {
+            "",
+            "Japan",
+            "Germany",
+            "Russia",
+            "French",
+            "Gr. Britain",
+            "USA",
+            "Canada"});
+            this.Country.Location = new System.Drawing.Point(123, 70);
+            this.Country.Name = "Country";
+            this.Country.Size = new System.Drawing.Size(116, 28);
+            this.Country.TabIndex = 50;
+            this.Country.TabStop = false;
+            // 
+            // Sport
+            // 
+            this.Sport.Font = new System.Drawing.Font("Segoe UI Light", 11.25F);
+            this.Sport.FormattingEnabled = true;
+            this.Sport.Items.AddRange(new object[] {
+            "",
+            "Biathlon",
+            "Bobsleigh",
+            "Curling",
+            "Snowboard",
+            "Ski race",
+            "Skiing"});
+            this.Sport.Location = new System.Drawing.Point(123, 167);
+            this.Sport.Name = "Sport";
+            this.Sport.Size = new System.Drawing.Size(116, 28);
+            this.Sport.TabIndex = 51;
+            this.Sport.TabStop = false;
+            // 
             // Tab2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(125)))), ((int)(((byte)(255)))));
+            this.Controls.Add(this.Sport);
+            this.Controls.Add(this.Country);
             this.Controls.Add(this.StartBut_4_3);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.StartBut_4_2);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.Sport);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.StartBut_4_1);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.Country);
             this.Controls.Add(this.label2);
             this.Name = "Tab2";
             this.Size = new System.Drawing.Size(367, 353);
@@ -201,16 +216,15 @@
         }
 
         #endregion
-
-        public System.Windows.Forms.TextBox Country;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         public System.Windows.Forms.Button StartBut_4_1;
         public System.Windows.Forms.Button StartBut_4_2;
         private System.Windows.Forms.Label label3;
-        public System.Windows.Forms.TextBox Sport;
         private System.Windows.Forms.Label label4;
         public System.Windows.Forms.Button StartBut_4_3;
         private System.Windows.Forms.Label label5;
+        public System.Windows.Forms.ComboBox Country;
+        public System.Windows.Forms.ComboBox Sport;
     }
 }

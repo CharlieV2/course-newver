@@ -48,7 +48,7 @@ namespace course
                     sportsmen.Name = GermanyNameArray[random.Next(0, GermanyNameArray.Length)];
                     sportsmen.Surname = GermanySurnameArray[random.Next(0, GermanySurnameArray.Length)];
                     break;
-                case "Russian":
+                case "Russia":
                     sportsmen.Name = RussianNameArray[random.Next(0, RussianNameArray.Length)];
                     sportsmen.Surname = RussianSurnameArray[random.Next(0, RussianSurnameArray.Length)];
                     break;

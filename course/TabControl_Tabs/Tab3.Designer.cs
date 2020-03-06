@@ -34,10 +34,10 @@
             this.StartBut_4_6 = new System.Windows.Forms.Button();
             this.StartBut_4_5 = new System.Windows.Forms.Button();
             this.StartBut_4_4 = new System.Windows.Forms.Button();
-            this.Sport44 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.Sport45 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.Sport44 = new System.Windows.Forms.ComboBox();
+            this.Sport45 = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // label5
@@ -127,16 +127,6 @@
             this.StartBut_4_4.Text = "Start";
             this.StartBut_4_4.UseVisualStyleBackColor = false;
             // 
-            // Sport44
-            // 
-            this.Sport44.Font = new System.Drawing.Font("Segoe UI Light", 11F);
-            this.Sport44.Location = new System.Drawing.Point(123, 71);
-            this.Sport44.Name = "Sport44";
-            this.Sport44.Size = new System.Drawing.Size(116, 27);
-            this.Sport44.TabIndex = 63;
-            this.Sport44.TabStop = false;
-            this.Sport44.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -148,16 +138,6 @@
             this.label4.Size = new System.Drawing.Size(53, 21);
             this.label4.TabIndex = 62;
             this.label4.Text = "Спорт";
-            // 
-            // Sport45
-            // 
-            this.Sport45.Font = new System.Drawing.Font("Segoe UI Light", 11F);
-            this.Sport45.Location = new System.Drawing.Point(123, 168);
-            this.Sport45.Name = "Sport45";
-            this.Sport45.Size = new System.Drawing.Size(116, 27);
-            this.Sport45.TabIndex = 65;
-            this.Sport45.TabStop = false;
-            this.Sport45.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label2
             // 
@@ -171,14 +151,50 @@
             this.label2.TabIndex = 64;
             this.label2.Text = "Спорт";
             // 
+            // Sport44
+            // 
+            this.Sport44.Font = new System.Drawing.Font("Segoe UI Light", 11.25F);
+            this.Sport44.FormattingEnabled = true;
+            this.Sport44.Items.AddRange(new object[] {
+            "",
+            "Biathlon",
+            "Bobsleigh",
+            "Curling",
+            "Snowboard",
+            "Ski race",
+            "Skiing"});
+            this.Sport44.Location = new System.Drawing.Point(123, 70);
+            this.Sport44.Name = "Sport44";
+            this.Sport44.Size = new System.Drawing.Size(116, 28);
+            this.Sport44.TabIndex = 66;
+            this.Sport44.TabStop = false;
+            // 
+            // Sport45
+            // 
+            this.Sport45.Font = new System.Drawing.Font("Segoe UI Light", 11.25F);
+            this.Sport45.FormattingEnabled = true;
+            this.Sport45.Items.AddRange(new object[] {
+            "",
+            "Biathlon",
+            "Bobsleigh",
+            "Curling",
+            "Snowboard",
+            "Ski race",
+            "Skiing"});
+            this.Sport45.Location = new System.Drawing.Point(123, 167);
+            this.Sport45.Name = "Sport45";
+            this.Sport45.Size = new System.Drawing.Size(116, 28);
+            this.Sport45.TabIndex = 67;
+            this.Sport45.TabStop = false;
+            // 
             // Tab3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(125)))), ((int)(((byte)(255)))));
             this.Controls.Add(this.Sport45);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.Sport44);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.StartBut_4_4);
             this.Controls.Add(this.StartBut_4_5);
@@ -201,9 +217,9 @@
         public System.Windows.Forms.Button StartBut_4_6;
         public System.Windows.Forms.Button StartBut_4_5;
         public System.Windows.Forms.Button StartBut_4_4;
-        public System.Windows.Forms.TextBox Sport44;
         private System.Windows.Forms.Label label4;
-        public System.Windows.Forms.TextBox Sport45;
         private System.Windows.Forms.Label label2;
+        public System.Windows.Forms.ComboBox Sport44;
+        public System.Windows.Forms.ComboBox Sport45;
     }
 }
