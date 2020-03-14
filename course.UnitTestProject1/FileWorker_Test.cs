@@ -60,6 +60,8 @@ namespace course.UnitTestProject1
             string expected;
             string actual;
 
+            Variables.sportsmens.Clear();
+
             // add new sportsmen
             Sportsmen sportsmen = new Sportsmen();
             sportsmen.Country = "testCountry";
