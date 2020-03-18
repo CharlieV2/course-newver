@@ -71,7 +71,7 @@ namespace course
             }
         }
 
-        private void UpdateEnabled(string set)
+        public void UpdateEnabled(string set)
         {
             // в зависимости от настройки меняет enabled кнопок и панелей
             switch (set)
@@ -342,7 +342,7 @@ namespace course
             }
         }
 
-        private void ElementsPanel_Clear()
+        public void ElementsPanel_Clear()
         {
             // очистка текстовых полей
             foreach (TextBox item in tab1.Controls.OfType<TextBox>().ToArray())
@@ -354,7 +354,7 @@ namespace course
 
             ElementsPanel.Width = 286;
         }
-        private void ElementsPanel_Fill()
+        public void ElementsPanel_Fill()
         {
             foreach (Panel element in Variables.elements)
             {

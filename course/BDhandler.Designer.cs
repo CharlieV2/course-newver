@@ -279,11 +279,8 @@
         }
 
         #endregion
-        private System.Windows.Forms.Panel BDstatusInfoPanel;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel TabInfoPanel;
-        private System.Windows.Forms.Button TabBut1;
-        private System.Windows.Forms.Button TabBut2;
         public System.Windows.Forms.Button TabBut3;
         private System.Windows.Forms.Label label2;
         public System.Windows.Forms.PictureBox BackBut;
@@ -294,5 +291,8 @@
         public System.Windows.Forms.Label BdInfo;
         public System.Windows.Forms.FlowLayoutPanel ElementsPanel;
         public System.Windows.Forms.ComboBox BdName;
+        public System.Windows.Forms.Button TabBut1;
+        public System.Windows.Forms.Button TabBut2;
+        public System.Windows.Forms.Panel BDstatusInfoPanel;
     }
 }
