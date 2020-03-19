@@ -51,10 +51,20 @@ namespace course.UnitTestProject1
             expectedAvrgAwards.Add(7.5);
             expectedAvrgAwards.Add(18);
 
+
+            // test
             var testResult = dataHandler.Data_44("testSport");
 
             Assert.ReferenceEquals(expectedAge, testResult.Item1);
             Assert.ReferenceEquals(expectedAvrgAwards, testResult.Item2);
+        }
+
+        [TestMethod]
+        public void ChartDataHandler_Data45()
+        {
+
+
+
         }
     }
 }
