@@ -53,14 +53,8 @@ namespace course.UnitTestProject1
 
             var testResult = dataHandler.Data_44("testSport");
 
-            string gg = "";
-
-            foreach (string item in testResult.Item1)
-            {
-                gg += item;
-            }
-
-            File.WriteAllText(Variables.path + "out.txt", gg);
+            Assert.ReferenceEquals(expectedAge, testResult.Item1);
+            Assert.ReferenceEquals(expectedAvrgAwards, testResult.Item2);
         }
     }
 }

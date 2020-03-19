@@ -16,7 +16,7 @@ namespace course.HelpClasses
             // агрегатор   возраст : количество наград, участников такого возраста
             foreach (Sportsmen item in Variables.sportsmens)
             {
-                if (item.Sport.ToLower() == Sport)
+                if (item.Sport.ToLower() == Sport.ToLower())
                 {
                     if (rowChartData.ContainsKey(item.Age.ToString()))
                     {
@@ -43,11 +43,11 @@ namespace course.HelpClasses
             List<string> ageChartData = new List<string>();
             List<double> avrgAwardsChartData = new List<double>();
 
-            int avrgAwards;
+            double avrgAwards;
 
             foreach (var item in sortedChartData)
             {
-                avrgAwards = item.Value[0] / item.Value[1];
+                avrgAwards = Convert.ToDouble(item.Value[0]) / Convert.ToDouble(item.Value[1]);
 
                 ageChartData.Add(item.Key);
                 avrgAwardsChartData.Add(avrgAwards);
