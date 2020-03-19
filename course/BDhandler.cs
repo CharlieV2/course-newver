@@ -21,6 +21,7 @@ namespace course
 
         UIcreator ui = new UIcreator();
         PanelsCreator panelsCreator = new PanelsCreator();
+        ChartDataHandler dataHandler = new ChartDataHandler();
         //--------//
 
         public BDhandler()
@@ -176,7 +177,6 @@ namespace course
                     panelsCreator.CreatePanels_General(ElementsPanel, tab1);
                     break;
 
-
                 case "4.1":
                     #region task 4.1
                     // Для заданной страны вывести список команды с указанием
@@ -185,7 +185,6 @@ namespace course
                     panelsCreator.CreatePanels_4_1(ElementsPanel, tab2.Country.Text);
                     #endregion
                     break;
-
 
                 case "4.2":
                     #region task 4.2
@@ -207,7 +206,6 @@ namespace course
                     panelsCreator.CreatePanels_4_2(ElementsPanel, sortedSportsmens.ToList());
                     #endregion
                     break;
-
 
                 case "4.3":
                     #region task 4.3
@@ -247,96 +245,29 @@ namespace course
                     #endregion
                     break;
 
-
                 case "4.4":
                     #region task 4.4
                     ElementsPanel_Clear();
 
-                    // calculate
-                    var rowChartData = new Dictionary<string, List<int>>();
-
-                    // агрегатор   возраст : количество наград, участников такого возраста
-                    foreach (Sportsmen item in Variables.sportsmens)
-                    {
-                        if (item.Sport.ToLower() == tab3.Sport44.Text.ToLower())
-                        {
-                            if (rowChartData.ContainsKey(item.Age.ToString()))
-                            {
-                                rowChartData[item.Age.ToString()][0] += item.Gold + item.Silver + item.Bronze;
-                                rowChartData[item.Age.ToString()][1]++;
-                            }
-                            else
-                            {
-                                rowChartData.Add(item.Age.ToString(), new List<int>());
-
-                                rowChartData[item.Age.ToString()].Add(item.Gold + item.Silver + item.Bronze);
-                                rowChartData[item.Age.ToString()].Add(1);
-                            }
-                        }
-                    }
-
-
-                    // сортировка по возрасту <
-                    var sortedChartData = from pair in rowChartData
-                                          orderby int.Parse(pair.Key) ascending
-                                          select pair;
-
-                    // получение средних значений
-                    List<string> ageChartData = new List<string>();
-                    List<int> avrgAwardsChartData = new List<int>();
-
-                    int avrgAwards;
-
-                    foreach (var item in sortedChartData)
-                    {
-                        avrgAwards = item.Value[0] / item.Value[1];
-
-                        ageChartData.Add(item.Key);
-                        avrgAwardsChartData.Add(avrgAwards);
-                    }
+                    var rowData = dataHandler.Data_44(tab3.Sport44.Text.ToLower());
                     
-                    panelsCreator.CreatePanels_4_4(ElementsPanel, ageChartData, avrgAwardsChartData);
+                    panelsCreator.CreatePanels_4_4(ElementsPanel, rowData.Item1, rowData.Item2);
                     #endregion
                     break;
-
 
                 case "4.5":
                     #region task 4.5
                     ElementsPanel_Clear();
 
-                    var data45 = new Dictionary<string, int>();
-
-                    foreach (Sportsmen item in Variables.sportsmens)
-                    {
-                        if (item.Sport.ToLower() == tab3.Sport45.Text.ToLower())
-                        {
-                            if (data45.ContainsKey(item.Country))
-                                data45[item.Country]++;
-                            else
-                                data45.Add(item.Country, 1);
-                        }
-                    }
-
-                    panelsCreator.CreatePanels_4_5(ElementsPanel, data45);
+                    panelsCreator.CreatePanels_4_5(ElementsPanel, dataHandler.Data_45(tab3.Sport45.Text.ToLower()));
                     #endregion
                     break;
-
 
                 case "4.6":
                     #region task 4.6 
                     ElementsPanel_Clear();
 
-                    var data46 = new Dictionary<string, int>();
-
-                    foreach (Sportsmen item in Variables.sportsmens)
-                    {
-                        if (data46.ContainsKey(item.Country))
-                            data46[item.Country]++;
-                        else
-                            data46.Add(item.Country, 1);
-                    }
-
-                    panelsCreator.CreatePanels_4_6(ElementsPanel, data46);
+                    panelsCreator.CreatePanels_4_6(ElementsPanel, dataHandler.Data_46());
                     #endregion
                     break;
             }

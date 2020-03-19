@@ -52,6 +52,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BDhandler_Test.cs" />
+    <Compile Include="ChartDataHandler_Test.cs" />
     <Compile Include="FileWorker_Test.cs" />
     <Compile Include="Generator_Test.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -346,7 +346,7 @@ namespace course
 
         }
 
-        public Chart CreateElements_4_4(List<string> age, List<int> awards)
+        public Chart CreateElements_4_4(List<string> age, List<double> awards)
         {
 
             Chart newChart = new Chart();

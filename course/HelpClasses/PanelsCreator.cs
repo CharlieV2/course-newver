@@ -54,7 +54,7 @@ namespace course.HelpClasses
 
             ElementsPanel.Width = ElementsPanel.Controls.Count > 5 ? 306 : 286;
         }
-        public void CreatePanels_4_4(Panel ElementsPanel, List<string> age, List<int> awards)
+        public void CreatePanels_4_4(Panel ElementsPanel, List<string> age, List<double> awards)
         {
             // add save chart button
             Button btnSaveChart = ui.NewButton(new Font("Segoe UI Light", 9F, FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204))), FlatStyle.Flat, ElementsPanel);

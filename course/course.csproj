@@ -60,6 +60,7 @@
     <Compile Include="BDhandler.Designer.cs">
       <DependentUpon>BDhandler.cs</DependentUpon>
     </Compile>
+    <Compile Include="HelpClasses\ChartDataHandler.cs" />
     <Compile Include="HelpClasses\Generator.cs" />
     <Compile Include="HelpClasses\FileWorker.cs" />
     <Compile Include="HelpClasses\PanelsCreator.cs" />
