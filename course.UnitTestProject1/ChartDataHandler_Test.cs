@@ -62,14 +62,6 @@ namespace course.UnitTestProject1
         [TestMethod]
         public void ChartDataHandler_Data45()
         {
-
-
-
-        }
-
-        [TestMethod]
-        public void ChartDataHandler_Data45()
-        {
             Variables.sportsmens.Clear();
 
             // create sportsmens for test
