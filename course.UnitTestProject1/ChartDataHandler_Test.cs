@@ -13,14 +13,14 @@ namespace course.UnitTestProject1
     {
         ChartDataHandler dataHandler = new ChartDataHandler();
 
-        private Sportsmen CreateSportsmen(int age, int gold, int silver, int bronze)
+        private Sportsmen CreateSportsmen(string country = "testCountry", string sport = "testSport", int age = 0, int gold = 0, int silver = 0, int bronze = 0)
         {
             Sportsmen sportsmen = new Sportsmen();
 
-            sportsmen.Country = "testCountry";
+            sportsmen.Country = country;
             sportsmen.Name = "testName";
             sportsmen.Surname = "testSurname";
-            sportsmen.Sport = "testSport";
+            sportsmen.Sport = sport;
             sportsmen.Age = age;
             sportsmen.Gold = gold;
             sportsmen.Silver = silver;
@@ -36,9 +36,9 @@ namespace course.UnitTestProject1
             Variables.sportsmens.Clear();
 
             // create sportsmens for test
-            Variables.sportsmens.Add(CreateSportsmen(20, 2, 2, 2));
-            Variables.sportsmens.Add(CreateSportsmen(20, 3, 3, 3));
-            Variables.sportsmens.Add(CreateSportsmen(40, 6, 6, 6));
+            Variables.sportsmens.Add(CreateSportsmen(age: 20, gold: 2, silver: 2, bronze: 2));
+            Variables.sportsmens.Add(CreateSportsmen(age: 20, gold: 3, silver: 3, bronze: 3));
+            Variables.sportsmens.Add(CreateSportsmen(age: 40, gold: 6, silver: 6, bronze: 6));
 
 
             // set expected lists
@@ -62,5 +62,28 @@ namespace course.UnitTestProject1
 
             File.WriteAllText(Variables.path + "out.txt", gg);
         }
+
+        [TestMethod]
+        public void ChartDataHandler_Data45()
+        {
+            Variables.sportsmens.Clear();
+
+            // create sportsmens for test
+            Variables.sportsmens.Add(CreateSportsmen("Country1"));
+            Variables.sportsmens.Add(CreateSportsmen("Country1"));
+            Variables.sportsmens.Add(CreateSportsmen("Country1"));
+            Variables.sportsmens.Add(CreateSportsmen("Country2", "testSport_notforsearch"));
+            Variables.sportsmens.Add(CreateSportsmen("Country2"));
+
+            // set expected dictionary
+            Dictionary<string, int> expectedDictionary = new Dictionary<string, int>();
+
+            expectedDictionary.Add("Country1", 3);
+            expectedDictionary.Add("Country2", 1);
+
+            // test
+            CollectionAssert.AreEqual(expectedDictionary, dataHandler.Data_45("testSport"));
+        }
+
     }
 }

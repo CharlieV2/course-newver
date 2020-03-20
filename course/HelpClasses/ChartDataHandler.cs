@@ -16,7 +16,7 @@ namespace course.HelpClasses
             // агрегатор   возраст : количество наград, участников такого возраста
             foreach (Sportsmen item in Variables.sportsmens)
             {
-                if (item.Sport.ToLower() == Sport)
+                if (item.Sport.ToLower() == Sport.ToLower())
                 {
                     if (rowChartData.ContainsKey(item.Age.ToString()))
                     {
@@ -64,7 +64,7 @@ namespace course.HelpClasses
 
             foreach (Sportsmen item in Variables.sportsmens)
             {
-                if (item.Sport.ToLower() == Sport)
+                if (item.Sport.ToLower() == Sport.ToLower())
                 {
                     if (data.ContainsKey(item.Country))
                         data[item.Country]++;
