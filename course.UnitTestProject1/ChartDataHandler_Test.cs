@@ -51,16 +51,20 @@ namespace course.UnitTestProject1
             expectedAvrgAwards.Add(7.5);
             expectedAvrgAwards.Add(18);
 
+
+            // test
             var testResult = dataHandler.Data_44("testSport");
 
-            string gg = "";
+            Assert.ReferenceEquals(expectedAge, testResult.Item1);
+            Assert.ReferenceEquals(expectedAvrgAwards, testResult.Item2);
+        }
 
-            foreach (string item in testResult.Item1)
-            {
-                gg += item;
-            }
+        [TestMethod]
+        public void ChartDataHandler_Data45()
+        {
 
-            File.WriteAllText(Variables.path + "out.txt", gg);
+
+
         }
 
         [TestMethod]
