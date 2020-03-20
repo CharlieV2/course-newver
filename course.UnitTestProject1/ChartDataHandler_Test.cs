@@ -55,8 +55,8 @@ namespace course.UnitTestProject1
             // test
             var testResult = dataHandler.Data_44("testSport");
 
-            Assert.ReferenceEquals(expectedAge, testResult.Item1);
-            Assert.ReferenceEquals(expectedAvrgAwards, testResult.Item2);
+            CollectionAssert.AreEqual(expectedAge, testResult.Item1);
+            CollectionAssert.AreEqual(expectedAvrgAwards, testResult.Item2);
         }
 
         [TestMethod]
@@ -79,6 +79,33 @@ namespace course.UnitTestProject1
 
             // test
             CollectionAssert.AreEqual(expectedDictionary, dataHandler.Data_45("testSport"));
+        }
+
+        [TestMethod]
+        public void ChartDataHandler_Data46()
+        {
+            Variables.sportsmens.Clear();
+
+            // create sportsmens for test
+            Variables.sportsmens.Add(CreateSportsmen("Country1"));
+            Variables.sportsmens.Add(CreateSportsmen("Country1"));
+            Variables.sportsmens.Add(CreateSportsmen("Country1"));
+            Variables.sportsmens.Add(CreateSportsmen("Country2"));
+            Variables.sportsmens.Add(CreateSportsmen("Country2"));
+            Variables.sportsmens.Add(CreateSportsmen("Country3"));
+            Variables.sportsmens.Add(CreateSportsmen("Country3"));
+            Variables.sportsmens.Add(CreateSportsmen("Country4"));
+
+            // set expected dictionary
+            Dictionary<string, int> expectedDictionary = new Dictionary<string, int>();
+
+            expectedDictionary.Add("Country1", 3);
+            expectedDictionary.Add("Country2", 2);
+            expectedDictionary.Add("Country3", 2);
+            expectedDictionary.Add("Country4", 1);
+
+            // test
+            CollectionAssert.AreEqual(expectedDictionary, dataHandler.Data_46());
         }
 
     }
