@@ -26,6 +26,10 @@ namespace course
         {
             InitializeComponent();
             InitializeControls();
+
+            Screensaver screensaver = new Screensaver();
+            Controls.Add(screensaver);
+            screensaver.BringToFront();
         }
 
         void InitializeControls()
